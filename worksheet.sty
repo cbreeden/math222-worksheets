@@ -1,0 +1,97 @@
+\usepackage{geometry}\geometry{left=0.8in, right =0.8in, bottom=1in, top=0.6in}
+
+%%%%%%%%%%%%%%
+%% FONTS
+%%%%%%%%%%%%%%%%%%
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usepackage{newtxtext,newtxmath}
+\usepackage[english]{babel} % English language/hyphenation
+
+%%%%%%%%%%%%%%
+%% FORMATING
+%%%%%%%%%%%%%%%%%
+
+%%% Footer Macros
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\renewcommand*{\title}{\gdef\@title}
+\newcommand*{\subtitle}{\gdef\@subtitle}
+\newcommand*{\course}{\gdef\@course}
+\newcommand*{\school}{\gdef\@school}
+
+%%% Title Macros
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule
+
+\renewcommand{\maketitle}{
+	\normalfont \normalsize \hfill
+	\textsc{\@course, \@school}
+	{\center \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+		{\huge \@title} \\ { \@subtitle }
+        \horrule{2pt} \\[0.5cm]        % Thick bottom horizontal rule
+	}
+}
+
+%%% Section Macros
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape\underline} % Make all sections centered, small caps
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+
+\usepackage{tabu}     % Use for easier tables in latex 
+\usepackage{enumitem} % Used to easily customize enumeration.
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%%%%%%%%%%%%
+%% Graphics
+%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx} % Allow ability to include graphics
+\usepackage{pgf,tikz} % More graphics!
+\usetikzlibrary{calc, intersections, angles, quotes, arrows}
+\usetikzlibrary{decorations.pathreplacing}
+
+%%%%%%%%%%%%
+%% Problems
+%%%%%%%%%%%%%%%%
+
+\newcounter{ProblemNumber} % Start problem counter at 1
+\newcounter{SubProblemNumber}
+
+\newcommand{\Prob}{
+	\stepcounter{ProblemNumber}
+	\setcounter{SubProblemNumber}{0}
+    \textbf{Problem \theProblemNumber .\quad}
+}
+
+\newcommand{\prob}{
+	\stepcounter{ProblemNumber}
+    \theProblemNumber .
+}
+
+\newcommand{\subprob}{
+	\stepcounter{SubProblemNumber}
+	\textbf{(\alph{SubProblemNumber})\quad} 
+}
+
+%%%%%%%%%%%%
+%% Mathematics
+%%%%%%%%%%%%%%%%%
+
+\newcommand{\DS}{\displaystyle}

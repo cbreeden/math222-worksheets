@@ -1,0 +1,110 @@
+\documentclass[paper=letter, 11pt]{article}
+\usepackage{worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Calculus II}
+\title{Worksheet 10}
+\subtitle{Taylor Polynomials}
+
+\usepackage{tcolorbox}
+
+\begin{document}
+\maketitle
+
+\begin{tcolorbox}[title=Definition: Taylor Polynomials,fonttitle=\bfseries\rmfamily]
+	The \textbf{Taylor polynomial} of a function $y = f(x)$ of degree $n$ at a point $a$ is the polynomial:
+	
+	\[ T^a_n f(x) = f(a) + f'(a)(x - a) + \dfrac{f''(a)}{2!}(x-a)^2 + \,\cdots\, + \dfrac{f^(n)(a)}{n!}(x - a)^n \]
+	
+	The \textbf{Taylor series} of a function $y = f(x)$ centered at $a = 0$ is the infinite sum:
+	
+	\[ T_{\infty} f(x) = f(0) + f'(0)x + \dfrac{f''(0)}{2!}x^2 + \dfrac{f'''(0)}{3!}x^3 + \,\cdots\, + \dfrac{f^(n)(0)}{n!}x^n +\, \cdots \]
+\end{tcolorbox}
+
+Calculate the derivatives of the following functions and look for a pattern.  Use this pattern to calculate the \textit{Taylor series} for the following functions.\bigskip
+
+\Prob $e^x$ \vfill
+
+\Prob $\sin x$ \vfill
+
+\Prob $\sqrt{1 + x}$ \vfill
+
+\newpage
+
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\begin{tcolorbox}[title=Fundamental Taylor Series Formulas,fonttitle=\bfseries\rmfamily]
+Write out the formulas for the following Taylor series.  You will be expected to know how to calculate these by the definitions, but also memorized.
+
+\begin{flalign*}
+T_{\infty}\,e^x &= &\\\\
+T_{\infty}\,\sin x &= &\\\\
+T_{\infty}\,\cos x &= &\\\\
+T_{\infty}\,\dfrac{1}{1-x} &= &\\\\
+T{_\infty}\,\ln(1 - x) &= &\\
+\end{flalign*}
+
+\end{tcolorbox}
+\end{minipage}
+\end{center}
+
+\section*{Taylor Series by Substitution}
+
+Suppose you know the Taylor series for $f(x)$, then you can calculate the Taylor series for $f(3x)$ or $f(x^2)$, etc, by simply substituting $3x$ or $x^2$ into your Taylor series.\\
+
+For example, we know:
+
+\[ T_{\infty} e^x = 1 + x + \dfrac{x^2}{2!} + \frac{x^3}{3!} + \,\cdots\, +  \frac{x^n}{n!} + \, \cdots \]
+
+So to find the Taylor series for $e^{3x}$ and $e^{-x^2}$ is a simple as a substitution:
+
+\begin{align*}
+T_{\infty} e^{3x} &= 1 + (3x) + \frac{(3x)^2}{2!} + \frac{(3x)^3}{3!} + \,\cdots\, + \frac{(3x)^n}{n!} + \,\cdots \\
+ &= 1 + 3x + \frac{9x^2}{2!} + \frac{27x^3}{3!} + \,\cdots\, + \frac{3^n x^n}{n!} + \,\cdots \\
+ & \\
+T_{\infty} e^{-x^2} &= 1 + (-x^2) + \frac{(-x^2)^2}{2!} + \frac{(-x^2)^3}{3!} + \,\cdots\, + \frac{(-x^2)^n}{n!} + \,\cdots \\
+ &= 1 - x^2 + \frac{x^4}{2!} - \frac{x^6}{3!} + \,\cdots\, + \frac{(-1)^nx^{2n}}{n!} + \,\cdots \\
+\end{align*}
+
+\newpage
+
+Use the substitution method to find a Taylor series for the following problems.
+
+\Prob $\dfrac{1}{1 - x^2}$\vfill
+
+\Prob $\ln(1 - 2x^3)$\vfill
+
+\Prob $\sin(2x^4)$\vfill
+
+\newpage
+
+\section*{Calculating Taylor Series by Multiplying by $x^n$}
+
+If you know the Taylor series for $f(x)$ then the Taylor series for $x^nf(x)$ is obtained by multiplying $T_{\infty}f(x)$ by $x^n$.  Use this technique for the following.\bigskip
+
+\Prob $\dfrac{3}{2 - x}$. \quad Hint:\,\,$\dfrac{3}{2 - x} = \dfrac{3}{2}\cdot \dfrac{1}{1 - x/2}$.\vfill
+
+\Prob $\frac{x}{2 - x^2}$\vfill
+
+\Prob $x\ln(2 + 2x)$\vfill
+
+\newpage
+
+\section*{Adding Taylor Series}
+
+Calculate the Taylor series for the following.\bigskip
+
+\Prob $\sinh(x)$. \quad Recall: $\sinh(x) = \frac{1}{2}(e^x - e^{-x})$.\vfill
+
+\Prob $\dfrac{1}{x^2 - 3x + 2}$. \quad Hint: PFD!\vfill
+
+\Prob $\dfrac{1 + x}{1 - x}$.\vfill
+
+\newpage
+
+
+
+\newpage
+
+
+\end{document}
