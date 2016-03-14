@@ -1,0 +1,30 @@
+\documentclass[paper=letter, 11pt]{article}
+\usepackage{../worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Calculus II}
+\title{Worksheet 11}
+\subtitle{Lagrange's Error Estimation}
+
+\usepackage{tcolorbox}
+
+\begin{document}
+\maketitle
+
+\Prob Find the 4th degree Taylor polynomial of $\sin x$ (which we often write as $T_4\, \sin x$).  Estimate the error $|\sin x - T_4 \sin x|$ for $|x| < 1$.\vfill
+
+\Prob Calculate the 5th degree Taylor polynomial $T_5\, e^x$ to find an approximation for $e$.  Estimate the error of your approximation.\vfill
+
+\newpage
+
+\Prob Recall that $\sqrt{225} = 15$.  Calculate as many terms as you need of the taylor polynomial for $\sqrt{225 - x}$ to find an approximation of $\sqrt{222}$ with an error less than $\frac{1}{1000}$.\vfill
+
+\Prob A commonly used approximation is $\sqrt{1 + x} \approx 1 + \frac{1}{2}x$ for small $x$.  How small must $x$ be for this approximation to be accurate to within 1\% error?  For simplicity, assume that $x > 0$.\vfill
+
+\newpage 
+
+\Prob How many terms of the Taylor series for $\ln(1 + x)$ do you need to approximate $\ln\left(\frac{3}{2}\right)$ with an error less than $\frac{1}{100}$?\vfill
+
+\Prob How many terms of the Taylor series for $\ln(1 + x)$ do you need to approximation $\ln 2$ with an error less than $\frac{1}{100}$?\vfill
+
+\end{document}
