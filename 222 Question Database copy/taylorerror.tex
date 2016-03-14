@@ -1,0 +1,88 @@
+\newproblem{taylorerror:expatapoint}{%
+Find a bound on the error of the approximation of $e^{\frac{1}{3}}$
+by $1+\frac{1}{3}+\frac{1}{3^{2}2!}+\frac{1}{3^{3}(3!)}$.}{%
+We know that if $f(x)=e^{x}$ then $f^{(n)}(x)=e^{x}$. Approximating
+$e^{\frac{1}{3}}$ by $1+\frac{1}{3}+\frac{1}{3^{2}2!}+\frac{1}{3^{3}(3!)}$
+corresponds to approximating $e^{x}$ by $1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}=f(0)+f^{'}(0)x+f^{(2)}(0)\frac{x^{2}}{2!}+f^{(3)}(0)\frac{x^{3}}{3!}$.
+Taylor's theorem then tells us that there is a $\xi$ with $0\leq\xi\leq\frac{1}{3}$
+\begin{align*}
+e^{\frac{1}{3}}-(1+\frac{1}{3}+\frac{1}{3^{2}2!}+\frac{1}{3^{3}(3!)})=\frac{e^{\xi}}{4!}(\frac{1}{3})^{4}
+\end{align*}
+
+
+Since $e^{x}$ is an increasing function, we can bound this error
+by 
+\begin{align*}
+\frac{e^{\xi}}{4!}(\frac{1}{3})^{4}\leq\frac{e^{\frac{1}{3}}}{4!}(\frac{1}{3})^{4}
+\end{align*}
+
+but this is actually not at all helpful. The whole point of this problem
+was, after all, to estimate $e^{\frac{1}{3}}!$ We still know that $e \leq 3 < 8$, so that $e^{\frac{1}{3}} < 8^{\frac{1}{3}} = 2$. A final answer is then that 
+\begin{align*}
+e^{\frac{1}{3}}-(1+\frac{1}{3}+\frac{1}{3^{2}2!}+\frac{1}{3^{3}(3!)}) < \frac{2}{4!}(\frac{1}{3})^{4}=\frac{1}{972}\approx.00102
+\end{align*}
+}
+
+\newproblem{taylorerror:sinconvergence}{%
+Find a bound for $R_n^0 \sin(x)$ and use this to show that $T_n^0 \sin(x) \to \sin(x)$ for all $x$ as $n \to \infty$.}{%
+We begin by recalling the Lagrange form of the Taylor remainder term. If $f(x) = \sin(x)$ then
+\begin{align*}
+R_n^0 \sin(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}
+\end{align*}
+
+Notice that $f^{(n+1)}(x)$ is one of $\sin(x), \cos(x), -\sin(x),$ or $-\cos(x)$.  In any of these cases, we know that $|f^{(n+1)}(x)| \leq 1$ for all $x$.  So in particular, we have the bound
+\begin{align*}
+|R_n^0 \sin(x)| &= |\frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}| \\
+&\leq \frac{1}{(n+1)!} |x|^{n+1}
+\end{align*}
+
+Since for any $x$, $\lim_{n \to \infty} \frac{1}{(n+1)!} |x|^{n+1} = 0$, this shows that for any $x$, $R_n^0 \sin(x) \to 0$, which implies that $T_n^0 \sin(x) = \sin(x) - R_n^0 \sin(x) \to \sin(x)$. 
+}
+
+\newproblem{taylorerror:sin3convergence}{%
+Find a bound for $R_n^0 \sin(3x)$ and use this to show that $T_n^0 \sin(3x) \to \sin(3x)$ for all $x$ as $n \to \infty$.}{%
+We begin by recalling the Lagrange form of the Taylor remainder term. If $f(x) = \sin(3x)$ then
+\begin{align*}
+R_n^0 \sin(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}
+\end{align*}
+
+Notice that $f^{(n+1)}(x)$ is one of $3^{n+1}\sin(3x), 3^{n+1}\cos(3x), -3^{n+1}\sin(3x),$ or $-3^{n+1}\cos(3x)$.  In any of these cases, we know that $|f^{(n+1)}(x)| \leq 3^{n+1}$ for all $x$.  So in particular, we have the bound
+\begin{align*}
+|R_n^0 \sin(3x)| &= |\frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}| \\
+&\leq \frac{3^n}{(n+1)!} |x|^{n+1} \\
+= \frac{|3x|^{n+1}}{(n+1)!}
+\end{align*}
+Since for any $x$, $\lim_{n \to \infty} \frac{1}{(n+1)!} |3x|^{n+1} = 0$, this shows that for any $x$, $R_n^0 \sin(3x) \to 0$, which implies that $T_n^0 \sin(3x) = \sin(3x) - R_n^0 \sin(3x) \to \sin(3x)$. 
+}
+
+\newproblem{taylorerror:exp2convergence}{%
+Find a bound on $R_n^0 e^{2x}$ and use this to show that for every $x$, $T_n^0 e^{2x} \to e^{2x}$ as $n \to \infty$.}{%
+We begin by recalling the Lagrange form of the Taylor remainder term. If $f(x) = e^{2x}$ then
+\begin{align*}
+R_n^0 e^{2x} = \frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}
+\end{align*}
+If we recall that $f^{(n)}(x) = 2^{n} e^{2x}$ we can see that $|f^{(n+1)}(\xi)| \leq 2^{n+1} e^{2|x|}$ for any $\xi$ between $0$ and $x$.  Then $|R_n^0 e^{2x}| \leq \frac{2^{n+1} e^{2|x|}}{(n+1)!}|x|^{n+1} = \frac{e^{2|x|}}{(n+1)!}|2x|^{n+1}$.  Notice that $e^{2|x|}$ is a number that does not depend on $n$, so it suffices to observe that $\lim_{n \to \infty} \frac{|2x|^{n+1}}{(n+1)!} = 0$ for all real numbers $x$.  Therefore $\lim_{n \to \infty} R_n^0 e^{2x} = 0$ and so $\lim_{n \to \infty} T_n^0 e^{2x} = e^{2x}$.
+}
+
+\newproblem{taylorerror:sincosconvergence}{%
+Find a bound on $R_n^0 \left(\sin(x) + \cos(x)\right)$ and use this to show that $T_n^0\left(\sin(x) + \cos(x)\right)$ converges to $\sin(x) + \cos(x)$ as $n \to \infty$.}{%
+We begin by recalling the Lagrange form of the Taylor remainder term. If $f(x) = \sin(x) + \cos(x)$ then
+\begin{align*}
+R_n^0 \sin(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}
+\end{align*}
+Notice that $f^{(n+1)}(x)$ is of the form $\pm \sin(x) \pm \cos(x)$, so that for all $x$ we know that $|f^{(n+1)}(x)| \leq 2$.
+\begin{align*}
+|R_n^0 \sin(x) + \cos(x)| &= |\frac{f^{(n+1)}(\xi)}{(n+1)!} x^{n+1}| \\
+&\leq \frac{2}{(n+1)!} |x|^{n+1} \\
+= \frac{2|x|^{n+1}}{(n+1)!}
+\end{align*}
+since $\frac{2|x|^{n+1}}{(n+1)!} \to 0$ for any $x$, this shows that $R_n^0 \left(\sin(x) + \cos(x) \right) \to 0$ and therefore that $T_n^0 \left(\sin(x) + \cos(x) \right) \to \sin(x) + \cos(x)$.
+}
+
+\newproblem{taylorerror:cosgoodenough}{%
+Find a bound on $|R_n \cos(x)|_{x = 1}|$ and use this information to find a decimal approximation of $\cos(1)$ with an error of at most $.1$.}{%
+Recall that $\cos(x) - T_n \cos(x) = R_n \cos(x)$ by definition, so if $|R_n\cos(x)_{x = 1}|$ is less than $\frac{1}{10}$, then $\cos(1)$ is within two decimal digits of $T_n \cos(x)|_{x=1}$.  If $f(x) = \cos(x)$ then $f^{n+1}(x)$ is $\pm \cos(x)$ or $\pm \sin(x)$.  In any case, we have $|f^{n+1}(x)| \leq 1$.  It follows then that
+\begin{align*}
+|R_n \cos(x)|_{x =1}| \leq \frac{1 (1)^{n+1}}{(n+1)!} = \frac{1}{(n+1)!}
+\end{align*}
+so if $n$ is sufficiently large that $\frac{1}{(n+1)!} \leq \frac{1}{10}$, then $|R_n \cos(x)|_{x =1}| \leq \frac{1}{10}$.  This is true, for example, for $n = 3$, since $(3+1)! = 24$.  Our approximation is then $T_3 \cos(x)|_{x =1} = 1 - \frac{1}{2} = .5$.}

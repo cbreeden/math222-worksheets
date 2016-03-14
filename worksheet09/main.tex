@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Math 222}
+\title{Worksheet 9}
+\subtitle{Differential Equations II}
+
+\usepackage{subfigure}
+
+\begin{document}
+\maketitle
+
+\section*{First Order Linear Differential Equations}
+
+\Prob Find the \textbf{general solution} to the differential equation: $x\dfrac{dy}{dx} - y = 2x \ln x$.\vfill
+
+\Prob Find the \textbf{general solution} to the differential equation: $x\dfrac{dy}{dx} + 3y = \dfrac{\sin x}{x^2}$.\vfill
+
+\newpage
+
+\Prob Find a solution to the \textbf{initial value problem}: \qquad $\dfrac{dy}{dx} + xy = x$, \qquad $y(0) = -6.$\vfill
+
+\Prob Find a solution to the \textbf{initial value problem}: \qquad $\dfrac{dy}{dx} = (y - 1)\dfrac{1}{x}$, \qquad $y(-1) = 0.$\vfill
+
+\newpage
+
+\section*{Vector Fields}
+
+\Prob Match the following differential equations with their corresponding direction fields.\vspace{0.5cm}
+
+\begin{align*}
+	(a) \quad &\dfrac{dy}{dx} = \dfrac{-x}{y}&
+	(b) \quad &\dfrac{dy}{dx} = y^2&
+	(c) \quad &\dfrac{dy}{dx} = \sin x& 
+	(d) \quad &\dfrac{dy}{dx} = x^2 + y^2
+\end{align*}
+
+\begin{figure}[h]
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\input{sin.pdf_tex}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\input{xy.pdf_tex}
+	\end{minipage}
+\end{figure}%
+
+\begin{figure}[h]
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\input{x2_y2.pdf_tex}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\def\svgwidth{\columnwidth}
+		\input{y2.pdf_tex}
+	\end{minipage}
+\end{figure}%
+
+\newpage
+
+\section*{Euler's Method}
+
+\Prob Find an exact solution of the following initial value problem, then use Euler's method with step size $\Delta x = 0.1$ to estimate $y(0.2)$.\vspace{-0.2cm}
+
+\begin{align*}
+	\dfrac{dy}{dx} &= 2xy + x \\
+	y(0) &= 0
+\end{align*}
+
+\vfill
+
+\Prob Use Euler's method with a step size of $\Delta t = 0.1$ to approximate the solution to $y'(t) = e^{-t^2}$, with $y(0) = 0$ to estimate $y(0.3)$.\vfill
+
+\newpage
+
+\section*{Word Problems}
+
+\Prob A tank starts with 100 liters of water and 1,000 bacteria in it. For now we assume the bacteria do not reproduce. Let $B(t)$ be the number of bacteria in the tank as a function of time, where $t$ is in hours. For each of the situations below, write down a first order differential equation satisfied by $B(t)$, of the form $B'(t) = f(t,B)$. You do not need to solve it.\vspace{0.5cm}
+
+\subprob A little goblin is pouring bacteria into the tank at a rate of 2015 bacteria per hour. \vfill
+
+\subprob Like part (a), but we are also draining the tank at a rate of 3 L/hr.\vfill
+
+\subprob Like part (b), but now the bacteria are reproducing.  This is a strain of bacteria which, if left alone, will double its population every hour.\vfill
+
+\newpage
+
+\Prob Retaw is a mysterious living liquid; it grows at a rate of 5\% of its volume per hour.  A scientist has a tank initially holding $y_0$ gallons of retaw and removes retaw from the tank continuously at the rate of 3 gallons per hour.\vspace{0.5cm}
+
+\subprob Find a differential equation for the number $y(t)$ of gallons of retaw in the tank at time $t$.\vfill
+
+\subprob Solve this equation for $y$ as a function of $t$.  (The initial volume $y_0$ will appear in our answer.)\vfill
+
+\subprob What is $\DS\lim_{t \to \infty} y(t)$ if $y_0 = 100$?\vfill
+
+\subprob What should the value of $y_0$ be so that $y(t)$ remains constant as the scientist drains retaw.\vfill
+
+\end{document}

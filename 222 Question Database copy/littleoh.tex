@@ -1,0 +1,69 @@
+\newproblem{littleoh:sindeg3}{%
+Is it true that $\sin(x) - x + \frac{x^3}{3!} = o(x^4)$?}{%
+Yes. We know that
+\begin{align*}
+\sin(x) &= \sum_{n=0}^\infty \frac{(-1)^nx^{2n+1}}{(2n+1)!} \\
+&= x - \frac{x^3}{3!} + \underbrace{\frac{x^5}{5!} + o(x^5)}_\textrm{$o(x^4)$}
+\end{align*}
+A second way of thinking about this problem is to notice that asking whether $\sin(x) - P(x) = o(x^4)$ where $P(x)$ polynomial of degree at most four is the same as asking whether $P(x)$ is the degree four Taylor polynomial of $\sin(x)$.  We can compute that for $f(x) = \sin(x)$ we have
+\begin{align*}
+f(x) &= \sin(x) & f(0) &= 0 \\
+f'(x) &= \cos(x) & f'(0) &= 1 \\
+f^{(2)}(x) &= -\sin(x) & f^{(2)}(0) &= 0 \\
+f^{(3)}(x) &= -\cos(x) & f^{(3)}(0) &= -1 \\
+f^{(4)}(x) &= \sin(x) & f^{(4)}(0) &= 0
+\end{align*}
+Therefore 
+\begin{align*}T_4^0 \sin(x) &= 0 + \frac{1}{1!}x + \frac{0}{2!}x^2 + \frac{-1}{3!}x^3 + \frac{0}{4!}x^4 \\
+&= x - \frac{x^3}{3!}
+\end{align*}
+so that $\sin(x) - \left(x - \frac{x^3}{3!}\right) = o(x^4)$
+}
+
+\newproblem{littleoh:cosdeg2}{%
+Is it true that $\cos(x) - 1 + \frac{x^2}{2} = o(x^3)?$}{%
+Yes.  We know that
+\begin{align*}
+\cos(x) &= \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n} \\
+&= 1 - \frac{x^2}{2} + \underbrace{\frac{x^4}{4!} + o(x^4)}_\textrm{$o(x^3)$} \\
+\end{align*}
+A second way of thinking about this problem is to notice that asking whether $\cos(x) - P(x) = o(x^3)$ where $P(x)$ polynomial of degree at most three is the same as asking whether $P(x)$ is the degree three Taylor polynomial of $\cos(x)$.  We can compute that for $f(x) = \cos(x)$ we have
+\begin{align*}
+f(x) &= \cos(x) & f(0) &= 1 \\
+f'(x) &= -\sin(x) & f'(0) &= 0 \\
+f^{(2)}(x) &= -\cos(x) & f^{(2)}(0) &= -1 \\
+f^{(3)}(x) &= \sin(x) & f^{(2)}(0) &= 0 \\
+\end{align*}
+
+so that 
+\begin{align*}
+T_3^0 \cos(x) &= 1 + \frac{0}{1!}x + \frac{-1}{2!}x^2 + \frac{0}{3!}x^3 \\
+&= 1 - \frac{x^2}{2}
+\end{align*}
+and therefore $\cos(x) - (1- \frac{x^2}{2}) = o(x^3)$.
+}
+
+\newproblem{littleoh:exp2deg4}{%
+Is it true that $e^{x^2} = 1 + x^2 + o(x^3)?$}{%
+Yes.
+\begin{align*}
+e^{x^2} &= \sum_{n=0}^\infty \frac{(x^2)^n}{n!} \\
+&= 1 + x^2 + \underbrace{\frac{x^4}{2} + o(x^4)}_\textrm{$o(x^3)$}
+\end{align*}
+}
+
+\newproblem{littleoh:expsqrt}{%
+Show that
+\begin{align*}
+e^{x} - \sqrt{1 + 2x} = o(x)
+\end{align*}
+}{%
+\begin{align*}
+e^x &= \sum_{n=0}^\infty \frac{1}{n!}x^n & \left(= 1 + x + o(x)\right) \\
+\sqrt{1+2x} &= \sum_{n=0}^\infty {\frac{1}{2} \choose n} (2x)^n & \left(= 1 + \frac{1}{2}(2x) + o(x)\right) \\
+\end{align*}
+From this we can see that
+\begin{align*}
+e^x - \sqrt{1+2x} &= \left(1 + x + o(x)\right) - \left(1 + x + o(x)\right) \\
+&= o(x)
+\end{align*}}

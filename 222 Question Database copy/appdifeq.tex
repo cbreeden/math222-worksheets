@@ -1,0 +1,91 @@
+\newproblem{appdifeq:mixing1}{%
+A 100 litre tank is filled with water infested with dangerous bacteria.  Clean water is pumped in and infected water is pumped out at a rate of 10 litres per minute, but the bacteria population reproduces at a rate of two percent per minute.  Assume that the bacteria are always perfectly uniformly mixed in the water. If the tank begins with a bacteria concentration of one percent at what time will the bacteria population be half of its present value?}{%
+Define $P(t)$ to be the population of bacteria in litres.  The following equations describe the change in bacteria population.
+\begin{align*}
+&\mbox{increase due to reprod.} = (\mbox{rate of bacteria reprod.})\times(\mbox{current population})\\
+&\mbox{decrease due to flow out} = (\mbox{concentration of bacteria}) \times (\mbox{rate water flows out at}) \\
+&\mbox{change in bacteria population} = \mbox{increase due to reprod.} - \mbox{decrease due to flow out}
+\end{align*}
+
+Now, we need to translate what we have written above into the language of differential equations.
+\begin{align*}
+\frac{dP}{dt} &= (.02)P(t) - \left(\frac{P(t)}{100}\right)(10) \\
+P(0) &= (.01)(100)
+\end{align*}
+
+which we can rewrite as
+\begin{align*}
+\frac{dP}{dt} &= -.08 P(t) \\
+P(0) &= 1
+\end{align*}
+
+This differential equation is separable and the solution is $P(t) = e^{-.08t}$.  To find the time when the concentration is halved, we would like to find the time when $P(t) = \frac{1}{2}$.
+\begin{align*}
+\frac{1}{2} &= e^{-.08t}\\
+-\ln(2) &= -.08 t \\
+t &= \frac{\ln(2)}{.08}
+\end{align*}
+}
+
+\newproblem{appdifeq:mixing2}{%
+A tank begins with 100 litres of salt water in it.  Fresh water is pumped in at a rate of twenty litres per minute and the mixed water is pumped out at a rate of ten litres per minute.  If the tank initially has ten kilograms of salt in it, find an equation for the amount of salt left in the tank in kilograms as a function of time. Note that the volume of the water in the tank is changing.}{%
+If $S(t)$ is the amount of salt in the tank in kilograms, the amount of salt left in the tank changes according to
+\begin{align*}
+\mbox{change in salt amount} = -\mbox{proportion of salt in the water} \times \mbox{water removed}
+\end{align*}
+
+Recall that the proportion of salt in the water is given by $\frac{S(t)}{V(t)}$, so we will need to know what $V(t)$ is.  Since we have a net increase of $10$ litres per minute and we start at $100$ litres, we know that $V(t) = 100 + 10t$.  Rewriting the previous line, we find that
+\begin{align*}
+\frac{dS}{dt} &= - \frac{S(t)}{100+10t}(10) \\
+&= -\frac{S(t)}{10+t}
+\end{align*}
+
+With the initial condition that $S(0) = 10$.  This equation is separable:
+\begin{align*}
+\frac{dS}{S} &= -\frac{dt}{10+t}
+\end{align*}
+(If we wanted the general condition we would be concerned as well with the possibility $S=0$, but that would not satisfy $S(0)=10$).
+Integrating both sides gives
+\begin{align*}
+ln|S| &= -ln|10 + t| +C
+\end{align*}
+Negative salt makes no sense, and we are only interested in positive values of $t$, so we can remove the absolute values.  Setting $D = e^C$ we get $S = D(10+t)^{-1}$, and by the initial condition $D=100$.
+
+Thus 
+\[S = \frac{100}{10+t}\]
+}
+
+\newproblem{appdifeq:populationconcentration}{%
+A 100 litre vat of water begins with an algae concentration of $1,000$ organisms per litre.  Suppose that the algae naturally reproduce at a rate of five percent per minute and die at a rate of four percent per minute.  If the vat is being drained at a rate of one litre per minute, what will the algae concentration be ten minutes from now? You should assume that the algae are uniformly distributed in the vat.  Remember to define your variables with units.}{%
+We will model the total population of algae in the vat $P(t)$ and then notice that the concentration at time $t$ is given by $\frac{P(t)}{V(t)}$, where $V(t)$ is the volume of water in the vat.
+The differential equation for the algae population is
+\begin{align*}
+\frac{dP}{dt} &= (.05)P(t) - (.04)P(t) - \frac{P(t)}{V(t)} \\
+P(0) &= 1,000(100) = 100,000
+\end{align*}
+
+Since $V(t) = 100 - t$, this differential equation becomes
+\begin{align*}
+\frac{dP}{dt} &= \left(.01 - \frac{1}{100-t}\right)P(t) \\
+P(0) &= 100,000
+\end{align*}
+
+This equation is separable.  Recalling that for $t < 100$ we have $\ln(100 - t) = \ln|100 - t|$, it follows that
+
+\begin{align*}
+\frac{dP}{P} &= \left(.01 - \frac{1}{100 -t}\right) dt \\
+\ln|P| &= .01 t + \ln|100 - t| + C \\
+P(t) &= A e^{.01t + \ln(100 - t)} \\
+&= A(100 - t)e^{.01t}
+\end{align*}
+
+The initial condition $P(0) = 100,000$ gives us
+\begin{align*}
+100,000 = 100 A
+\end{align*}
+
+so $A = 1000$ and $P(t) = 1000(100 - t)e{.01t}$.  The concentration in organisms per litre ten minutes from now will be
+\begin{align*}
+\frac{P(10)}{V(10)} &= \frac{1000(100 - 10)e^{(.01)(10)}}{100 - 10} = 1000e^{.1} 
+\end{align*}
+}

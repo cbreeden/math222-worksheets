@@ -1,0 +1,157 @@
+\newproblem{improper:cauchym}{%
+Compute $\int_{-\infty}^0 \frac{x}{1+x^2}dx$ and $\int_0^\infty \frac{x}{1+x^2}dx$.  What does this say about $\int_{-\infty}^\infty \frac{xdx}{1+x^2}$?}{%
+\begin{align*}
+\int_{-\infty}^0 \frac{x}{1+x^2}dx &= \lim_{A \to -\infty} \int_{A}^0 \frac{x dx}{1+x^2} \\
+&= \lim_{A \to -\infty}\left[\frac{1}{2}\ln(1+x^2)\right]_A^0\\
+&= \lim_{A \to -\infty} \ln(1) - \ln(1 + A^2) \\
+&= - \infty \\
+\int_0^\infty \frac{x}{1+x^2}dx &= \lim_{B \to \infty} \int_0^B \frac{x dx}{1+x^2} \\
+&= \lim_{B \to \infty}\left[\frac{1}{2}\ln(1+x^2)\right]_0^B\\
+&= \lim_{B \to \infty} \ln(1 + B^2) - \ln(1) \\
+&= \infty
+\end{align*}
+Notice that this problem shows that $\int_{-\infty}^\infty \frac{x}{1+x^2}dx$ does not exist.
+}
+
+\newproblem{improper:ln}{%
+Compute $\int_0^1 \ln(t) dt$.}{%
+\begin{align*}
+\int_0^1 \ln(t) dt &= \lim_{A \downarrow 0} \int_A^1 \ln(t) dt\\
+&= \lim_{A\downarrow 0} \int_A^1 \underbrace{\ln(t)}_\textrm{F(t)}\underbrace{ dt}_\textrm{G'(t)dt} \\
+&= \lim_{A \downarrow 0} \left[\underbrace{t}_\textrm{G(t)}\underbrace{\ln(t)}_\textrm{F(t)}\right]_A^1 - \int_A^1 \underbrace{t}_\textrm{G(t)} \underbrace{\frac{1}{t}dt}_\textrm{F'(t)dt} \\
+&= \lim_{A \downarrow 0} 1\ln(1) - A \ln(A) - 1 + A \\
+&= -1
+\end{align*}
+since $\lim_{A \downarrow 0} A \ln(A) = 0$.}
+
+\newproblem{improper:pf1}{%
+Compute $\int_{10}^\infty \frac{dx}{x^2-4}$}{%
+\begin{align*}
+\int_{10}^\infty \frac{dx}{x^2 -4} &= \lim_{L \to \infty} \int_{10}^L \frac{dx}{x^2 -4} \\
+&= \lim_{L \to \infty} \int_{10}^L \frac{dx}{(x-2)(x+2)} \\
+&= \lim_{L \to \infty} \int_{10}^L \frac{1}{4(x-2)} - \frac{1}{4(x+2)} dx \\
+&= \lim_{L \to \infty} \left[\frac{1}{4} \ln|x-2| - \frac{1}{4} \ln|x + 2|\right]_{10}^L \\
+&= \lim_{L \to \infty} \left[\frac{1}{4} \ln|\frac{x-2}{x+2}|\right]_{10}^L \\
+&= \underbrace{\lim_{L \to \infty} \frac{1}{4} \ln|\frac{L-2}{L+2}|}_\textrm{0} - \frac{1}{4} \ln|\frac{8}{12}| \\
+&=\frac{1}{4}\ln\left(\frac{3}{2}\right)
+\end{align*}}
+
+\newproblem{improper:pf2}{%
+Show that $\int_1^\infty \frac{dx}{x^2-4}$ is not a finite number.  What answer do you get if you forget that the integrand has an asymptote at $2$ and fail to split the integral up there?}{%
+You can use partial fractions to compute that
+\begin{align*}
+\int \frac{dx}{x^2 -4} = \frac{1}{4} \ln|\frac{x-2}{x+2}| + C
+\end{align*}
+
+If we write 
+\begin{align*}
+\int_1^\infty \frac{dx}{x^2-4} = \int_1^2 \frac{dx}{x^2-4} + \int_2^3 \frac{dx}{x^2 -4} + \int_3^\infty \frac{dx}{x^2-4}
+\end{align*}
+
+it suffices to show that one of these integrals is infinite. For example
+\begin{align*}
+\int_1^2 \frac{dx}{x^2-4} &= \lim_{A \uparrow 2} \int_1^2 \frac{dx}{x^2 -4} \\
+&= \lim_{A \uparrow 2} \left[\frac{1}{4}\ln|\frac{x-2}{x+2}| \right]_1^A \\
+&= \lim_{A \uparrow 2} \frac{1}{4}\ln|\frac{A-2}{A+2}| - \frac{1}{4} \ln|\frac{1}{2}| \\
+&= - \infty
+\end{align*}
+
+Now we will see what happens if we forget that the integrand has an asymptote at $2$.  
+\begin{align*}
+ \lim_{A \to \infty} \frac{1}{4} \ln|\frac{A-2}{A+2}| - \frac{1}{4}\ln|\frac{-1}{3}| &= \frac{1}{4}\ln(3)
+\end{align*}}
+
+\newproblem{improper:pf3}{%
+Compute $\int_1^\infty \frac{dx}{1 + e^{2x}}$}{%
+\begin{align*}
+\int_1^\infty \frac{dx}{1+e^{2x}} &= \lim_{L \to \infty} \int_1^L \frac{dx}{1+e^{2x}} \\
+&= \lim_{L \to \infty} \int_{x = 1}^{x = L} \frac{1}{u(1+u^2)} du & u = e^x \hspace{1pc} \frac{du}{u} = dx \\
+&= \lim_{L \to \infty} \int_{x = 1}^{x = L} \frac{1}{u} - \frac{u}{1+u^2} du \\
+&= \lim_{L \to \infty} \left[\ln|u|\right]_{x=1}^{x = L} - \left[\frac{1}{2}\ln|1+u^2|\right]_{x=1}^{x=L} \\
+&= \lim_{L \to \infty} \left[\underbrace{\ln(e^x)}_\textrm{x}\right]_1^L - \left[\frac{1}{2}\ln|1+e^{2x}|\right]_1^L \\
+&= \lim_{L \to \infty} L - 1 - \frac{1}{2}\ln|1 + e^{2L}| + \frac{1}{2}\ln(1 + e^2) \\
+&= \lim_{L \to \infty} L - 1 - \underbrace{\frac{1}{2}\ln(e^{2L})}_\textrm{L} - \frac{1}{2}\ln(e^{-2L} + 1) + \frac{1}{2}\ln(1 + e^2)\\
+&= \frac{1}{2}\ln(1+e^2) - 1
+\end{align*}
+}
+
+\newproblem{improper:pf4}{%
+Compute $\int_{10}^\infty \frac{dx}{x^2 - 9}$.}{%
+\begin{align*}
+\int_{10}^\infty \frac{dx}{x^2 - 9} &= \lim_{L \to \infty} \int_{10}^L \frac{dx}{x^2-9}\\
+&= \lim_{L \to \infty} \int_{10}^L \frac{1}{9(x-3)} - \frac{1}{9(x+3)} dx \\
+&= \lim_{L \to \infty} \left[\frac{1}{9}\ln(x-3) - \frac{1}{9}\ln(x+3) \right]_{10}^L \\
+&= \lim_{L \to \infty} \left[\frac{1}{9} \ln\left(\frac{x-3}{x+3}\right)\right]_{10}^L \\
+&= \underbrace{\lim_{L \to \infty} \frac{1}{9}\ln\left(\frac{L-3}{L+3}\right)}_\textrm{0} - \frac{1}{9}\ln\left(\frac{7}{13}\right) \\
+&= \frac{1}{9} \ln\left(\frac{13}{7}\right)
+\end{align*}}
+
+
+\newproblem{improper:trig1}{%
+Compute $\int_1^2 \frac{dt}{t \sqrt{t^2-1}}$.}{%
+\begin{align*}
+\int_1^2 \frac{dt}{t\sqrt{t^2-1}} &= \lim_{B \to 1}\int_B^2 \frac{dt}{t\sqrt{t^2-1}} \\
+&= \lim_{B \to 1} \mbox{ arcsec}(2) - \mbox{ arcsec}(B) \\
+&= \mbox{arcsec }(2)
+\end{align*}
+}
+
+\newproblem{improper:trig2}{%
+Compute $\int_1^2 \frac{dt}{\sqrt{4 - t^2}}$.}{%
+\begin{align*}
+\int_1^2 \frac{dt}{\sqrt{4 - t^2}} &= \lim_{L \to 2} \int_1^L \frac{dt}{\sqrt{4 - t^2}} \\
+&= \lim_{L \to 2} \left[\mbox{ arcsin}(\frac{t}{2}) \right]_1^L \\
+&= \lim_{L \to 2} \mbox{ arcsin}(\frac{L}{2}) - \mbox{ arcsin}(\frac{1}{2}) \\
+&= \frac{\pi}{2} - \frac{\pi}{6} \\
+&=\frac{\pi}{3}
+\end{align*}}
+
+\newproblem{improper:trig3}{%
+Compute $\int_1^3 \frac{dt}{\sqrt{9-t^2}}.$}{%
+\begin{align*}
+\int_1^3 \frac{dt}{\sqrt{9-t^2}} &= \lim_{L \to 3} \int_1^3 \frac{dt}{\sqrt{9-t^2}}\\
+&= \lim_{L \to 3}\left[\mbox{ arcsin}(\frac{t}{3})\right]_1^L \\
+&= \lim_{L \to 3}\mbox{ arcsin}(\frac{L}{3}) - \mbox{ arcsin}(\frac{1}{3}) \\
+&= \frac{\pi}{2} - \mbox{ arcsin}(\frac{1}{3})
+\end{align*}
+}
+
+\newproblem{improper:partial1}{%
+Compute $\int_1^\infty \frac{3}{x^2 + 3x}dx$.}{%
+First, recall that $\frac{3}{x^2 + 3x} = \frac{3}{x(x)}$.  By partial fractions, we can find that
+\begin{align*}
+\frac{3}{x^2 + 3x} &= \frac{1}{x} - \frac{1}{x+3}
+\end{align*}
+so that
+\begin{align*}
+\int_1^\infty \frac{3}{x^2 + 3x}dx &= \lim_{b \to \infty} \int_1^b \frac{3}{x^2 + 3x}dx \\
+&= \lim_{b \to \infty} \int_1^b \frac{1}{x} - \frac{1}{x+3}dx \\
+&= \lim_{b \to \infty} \left[\ln|x| - \ln|x+3| \right]_1^b \\
+&= \lim_{b \to \infty} \left[\ln \left|\frac{x}{x+3}\right|\right]_1^b \\
+&= \lim_{b \to \infty} \ln \left|\frac{b}{b+3}\right| - \ln\left(\frac{1}{4}\right) \\
+&= \ln(4)
+\end{align*}}
+
+\newproblem{improper:exp}{%
+Find $\int_0^\infty \frac{1}{e^t - 1}dt$.}{%
+First notice that the endpoints $0$ and $\infty$ are both improper, so we need to break the integral up.
+\begin{align*}
+\int_0^\infty \frac{1}{e^t - 1}dt &= \lim_{a \downarrow 0} \int_a^1 \frac{1}{e^t - 1}dt + \lim_{b\to \infty} \int_1^b \frac{1}{e^t - 1}dt
+\end{align*}
+
+We compute the antiderivative
+\begin{align*}
+\int \frac{1}{e^t - 1}dt &= \int \frac{1}{u(u-1)}du & u = e^t \hspace{1pc} \frac{1}{u}du = dt \\
+&= \int \frac{1}{u-1} du - \int \frac{1}{u} du \\
+&= \ln|u-1| - \ln|u| + C \\
+&= \ln|\frac{u-1}{u}| + C \\
+&= \ln|1 - \frac{1}{e^t}| + C
+\end{align*}
+
+and therefore
+\begin{align*}
+\lim_{a \downarrow 0} \int_a^1 \frac{1}{e^t - 1}dt + \lim_{b\to \infty} \int_1^b \frac{1}{e^t - 1}dt &= \lim_{a \downarrow 0} \left[\ln|1 - \frac{1}{e^t}|\right]_a^1 + \lim_{b \to \infty} \left[\ln|1 - \frac{1}{e^t}|\right]_1^b \\
+&= \lim_{a \downarrow 0} \ln|1 - \frac{1}{e}|  - \underbrace{\ln|1 - \frac{1}{e^a}|}_\textrm{Limit DNE} + \underbrace{\lim_{b \to \infty} \ln|1 - \frac{1}{e^b}|}_\textrm{Limit is 0} - \ln|1 - \frac{1}{e}|
+\end{align*}
+so the integral does not exist.
+}

@@ -1,0 +1,151 @@
+\usepackage{polynom}
+
+\newproblem{partialfractions:22/7-pi}{%
+Compute $\int_0^1 \frac{x^4(1-x)^4}{1+x^2}dx$.}{%
+\begin{align*}
+\int_0^1 \frac{x^4(1-x)^4}{1+x^2}dx &= \int_0^1 \frac{x^4 - 4x^5 + 6x^6 - 4x^7 + x^8}{1+x^2} dx
+\end{align*}}
+
+\newproblem{partialfractions:(x-1)/(x2+x)}{%
+Compute $\int \frac{w-1}{w^2+w}dw$}{%
+We start by computing the partial fraction decomposition for $\frac{w-1}{w^2+w}$
+\begin{align*}
+\frac{w-1}{w^2+w} &= \frac{w-1}{w(w+1)} \\
+&= \frac{A}{w} + \frac{B}{w+1} \\
+w-1 &= A(w+1) + Bw
+\end{align*}
+
+Plugging in $w = 0$ yields $A = -1$ and plugging in $w = -1$ yields $B = 2$.
+
+\begin{align*}
+\int \frac{w-1}{w^2 + w} dw &= \int \frac{-1}{w}dw + \int \frac{2}{1+w} dw \\
+&= -\ln|w| + 2\ln|1+w| + C \\
+&= \ln |\frac{w}{1+w}| + C
+\end{align*}
+}
+
+\newproblem{partialfractions:p}{%
+Compute $\int \frac{p+2}{p^2-1}dp$}{%
+We start by computing the partial fraction decomposition for $\frac{p+2}{p^2-1}$:
+\[\frac{p+2}{p^2-1} = \frac{p+2}{(p+1)(p-1)} = \frac{A}{p+1} + \frac{B}{p-1}\]
+Using the Heaviside trick we get $A = -1/2$ and $B = 3/2$.
+\[\frac{p+2}{p^2-1} = \frac{-1/2}{p+1} + \frac{3/2}{p-1}\]
+Integrating this gives
+\[-\frac{1}{2}\ln|p+1| + \frac{3}{2}\ln|p-1| + c\]
+}
+
+
+\newproblem{partialfractions:nopf}{%
+Compute $\int\frac{x}{x^2 -1}dx.$}{%
+\begin{align*}
+\int\frac{x}{x^2 -1} &= \frac{1}{2}\int \frac{1}{u} du & u = x^2 -1 \hspace{1pc} \frac{du}{2} = xdx \\
+&= \frac{1}{2}\ln|u| + C \\
+&= \frac{1}{2}\ln|x^2 -1| + C 
+\end{align*}
+}
+
+\newproblem{partialfractions:simple1}{%
+Compute $\int \frac{1}{x^2-4}dx$.}{%
+We begin by computing the partial fraction decomposition of $\frac{1}{x^2-4}$. 
+\begin{align*}
+\frac{1}{x^2-4} &= \frac{1}{(x-2)(x+2)} \\
+&= \frac{A}{x-2} + \frac{B}{x+2} \\
+1 &= A(x+2) + B(x-2)
+\end{align*}
+
+Setting $x = 2$ gives that $A = \frac{1}{4}$ and setting $x = -2$ gives that $B = \frac{-1}{4}$.  Therefore
+\begin{align*}
+\int \frac{1}{x^2 -4} dx &= \frac{1}{4}\int \frac{1}{x-2}dx - \frac{1}{4} \int \frac{1}{x+2} dx \\
+&= \frac{1}{4} \ln|x-2| - \frac{1}{4} \ln|x+2| + C \\
+&= \frac{1}{4}\ln|\frac{x-2}{x+2}| + C
+\end{align*}}
+
+\newproblem{partialfractions:cts1}{%
+Compute $\int \frac{1}{x^2 + 6x +10}dx$.}{%
+We can see that $x^2 + 6x + 10$ has no real roots by noticing that the discriminant in the quadratic formula ($b^2 - 4ac$), which is equal to $6^2 - 4(10) = -4$, is negative.  Therefore for this problem, we complete the square.
+\begin{align*}
+\int \frac{1}{x^2 + 6x + 10} &= \int \frac{1}{(x+3)^2 +1} dx \\
+&= \int \frac{1}{u^2 + 1} du & u = x + 3 \hspace{1pc} du = dx \\
+&= \mbox{arctan}(u) + C \\
+&= \mbox{arctan}(x+3) + C
+\end{align*}
+}
+
+\newproblem{partialfractions:division1}{%
+Compute $\int \frac{x^3}{x^2 + 2}dx$.}{%
+Notice that the degree of the numerator is greater than or equal to the degree of the denominator, so we need to do some kind of polynomial division to get this into a form we can work with.  We compute
+\[
+\polylongdiv{x^3}{x^2 + 2}
+\]
+
+and therefore
+\begin{align*}
+\int \frac{x^3}{x^2 + 2}dx &= \int x - \frac{2x}{x^2 + 2}dx \\
+&= \frac{x^2}{2} - \int \frac{1}{u} du & u = x^2 +2 \hspace{1pc} du = 2xdx \\
+&= \frac{x^2}{2} - \ln|u| + C \\
+&= \frac{x^2}{2} - \ln(x^2 + 2) + C
+\end{align*}
+}
+
+\newproblem{partialfractions:doubleroot1}{%
+Compute $\int \frac{x}{x^2 -2x + 1}dx$.}{%
+First, notice that $x^2 -2x + 1 = (x-1)^2$.  We can use partial fractions to compute this integral:
+\begin{align*}
+\frac{x}{(x-1)^2} &= \frac{A}{x-1} + \frac{B}{(x-1)^2} \\
+x &= A(x-1) + B
+\end{align*} 
+Now, plugging in $x = 1$ gives that $B = 1$ and plugging in $x = 0$ (or anything) lets us solve for $A = 1$.  Alternatively, we can rewrite the previous line as
+\begin{align*}
+x + 0 &= Ax + (B-A)
+\end{align*}
+
+and equating coefficients of $x$ and $1$ to obtain that $A = 1$ and $B-A = 0$.  We now compute
+\begin{align*}
+\int \frac{x}{x^2 -2x + 1} dx &= \int \frac{1}{x-1}dx + \int \frac{1}{(x-1)^2}dx \\
+&= \int \frac{1}{u}du + \int \frac{1}{u^2} du & u = x-1 \hspace{1pc} du = dx \\
+&= \ln|u| - \frac{1}{u} + C \\
+&= \ln|x-1| - \frac{1}{x-1} + C
+\end{align*}
+}
+
+
+\newproblem{partialfractions:expsub}{%
+Compute $\int \frac{dt}{2+e^{2t}}$.}{%
+\begin{align*}
+\int \frac{dt}{2+e^{2t}} &= \int \frac{du}{u(1+u^2)} & u = e^t \hspace{1pc} \frac{1}{u}du = dt
+\end{align*}
+
+we now need to compute the partial fraction decomposition for $\frac{1}{u(1+u^2)}$.
+
+\begin{align*}
+\frac{1}{u(2+u^2)} &= \frac{A}{u} + \frac{Bu + C}{2+u^2} \\
+1 &= A(2+u^2) + (Bu+C)u \\
+0u^2 + 0u + 1&= (A + B)u^2 + Cu + 2A \\
+\end{align*}
+
+Comparing coefficients, we find that
+
+\begin{align*}
+u^2&: (A + B) = 0 \\
+u&: C = 0 \\
+1&: 2A = 1
+\end{align*}
+which implies that $\frac{1}{u(2+u^2)} = \frac{1}{2u} - \frac{1}{2}\frac{u}{1+u^2}$.  Therefore
+\begin{align*}
+\int \frac{du}{u(2+u^2)} &= \frac{1}{2} \int \frac{1}{u}du - \frac{1}{2} \int \frac{u}{2+u^2} du \\
+&= \frac{1}{2}\ln|u| - \frac{1}{4} \ln|2 + u^2| + C \\
+&= \frac{1}{2}\ln(e^t) - \frac{1}{4} \ln(2 + e^{2t}) + C \\
+&= \frac{1}{2}t - \frac{1}{4} \ln(2 + e^{2t}) + C
+\end{align*}
+}
+
+
+
+
+
+
+
+
+
+
+

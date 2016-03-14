@@ -1,0 +1,187 @@
+\newproblem{trigsub:nosub}{%
+Compute $\int t\sqrt{1 - t^2}$dt.}{%
+\begin{align*}
+\int t \sqrt{1-t^2} dt &= \frac{-1}{2} \int \sqrt{u} du & u &= 1 - t^2 & \frac{-1}{2} du = t dt \\
+&= \frac{-1}{3} u^\frac{3}{2} + C \\
+&= \frac{-1}{3}\left(1 - t^2\right)^\frac{3}{2} + C
+\end{align*}
+}
+
+\newproblem{trigsub:sinsub1}{%
+Compute $\int \sqrt{16 - x^2}dx$.}{%
+\begin{align*}
+\int \sqrt{16 - x^2} dx &= \int \left(\sqrt{16 - 16\sin^2(\theta)}\right)4\cos(\theta)d\theta & x &= 4\sin(\theta) \\
+&= \int 4\cos(\theta) \sqrt{16(1 - \sin^2(\theta))} d\theta & dx &= 4\cos(\theta)d\theta \\
+&= 16 \int \cos^2(\theta)d\theta \\
+&= 16 \int \frac{1 + \cos(2\theta)}{2} d\theta \\
+&= 16\left(\frac{1}{2}\theta + \frac{1}{4}\sin(2\theta)\right) + C \\
+&= 8 \mbox{ arcsin}(\frac{x}{4}) + 4 \sin(2 \mbox{arcsin}(\frac{x}{4})) + C \\
+&= 8 \mbox{ arcsin}(\frac{x}{4}) + 8\sin(\mbox{arcsin}(\frac{x}{4}))\cos(\mbox{arcsin}(\frac{x}{4})) + C \\
+&= 8 \mbox{ arcsin}(\frac{x}{4}) + 2x \sqrt{1 - \left(\frac{x}{4}\right)^2} + C
+\end{align*}
+}
+
+\newproblem{trigsub:sinsub2}{%
+Compute $\int \sqrt{25 - x^2}dx$.}{%
+\begin{align*}
+\int \sqrt{25 - x^2} dx &= \int \left(\sqrt{25 - 25\sin^2(\theta)}\right)5\cos(\theta)d\theta & x &= 5\sin(\theta) \\
+&= \int 5\cos(\theta) \sqrt{25(1 - \sin^2(\theta))} d\theta & dx &= 5\cos(\theta)d\theta \\
+&= 25 \int \cos^2(\theta)d\theta \\
+&= 25 \int \frac{1 + \cos(2\theta)}{2} d\theta \\
+&= 25\left(\frac{1}{2}\theta + \frac{1}{4}\sin(2\theta)\right) + C \\
+&= \frac{25}{2} \mbox{ arcsin}(\frac{x}{5}) + \frac{25}{4} \sin(2 \mbox{arcsin}(\frac{x}{5})) + C \\
+&= \frac{25}{2} \mbox{ arcsin}(\frac{x}{5}) + \frac{25}{2}\sin(\mbox{arcsin}(\frac{x}{5}))\cos(\mbox{arcsin}(\frac{x}{5})) + C \\
+&= \frac{25}{2} \mbox{ arcsin}(\frac{x}{5}) + \frac{5}{2}x \sqrt{1 - \left(\frac{x}{5}\right)^2} + C
+\end{align*}
+}
+
+
+\newproblem{trigsub:sinsub3}{%
+Compute $\int \frac{x^3}{\sqrt{4-x^2}}dx$.}{%
+\begin{align*}
+\int \frac{x^3}{\sqrt{4-x^2}}dx &= \int \frac{8\sin^3(\theta)}{\sqrt{4-4\sin^2(\theta)}} 2\cos(\theta)d\theta & x &= 2\sin(\theta) \\
+&= 8 \int \sin^3(\theta) d\theta & dx &= 2\cos(\theta)d\theta \\
+&= 8\int (1 - \cos^2(\theta))\sin(\theta) d\theta & u &= \cos(\theta) \\
+&= -8 \int (1 - u^2)du & du &= -\sin(\theta) d\theta \\
+&= \frac{8}{3}u^3 - 8u + C \\
+&= \frac{8}{3}\cos^3(\theta) - 8\cos(\theta) + C \\
+&= \frac{8}{3}\cos^3\left(\arcsin\left(\frac{x}{2}\right)\right) - 8\cos\left(\arcsin\left(\frac{x}{2}\right)\right) + C \\
+&= \frac{8}{3}\left(1 - \left(\frac{x}{2}\right)^2\right)^{\frac{3}{2}} - 8\sqrt{1 - \left(\frac{x}{2}\right)^2} + C
+\end{align*}
+}
+
+\newproblem{trigsub:sinsub4}{%
+Compute $\int \frac{x^3}{\sqrt{9-x^2}}dx$.}{%
+\begin{align*}
+\int \frac{x^3}{\sqrt{9-x^2}}dx &= \int \frac{27\sin^3(\theta)}{\sqrt{9-9\sin^2(\theta)}} 3\cos(\theta)d\theta & x &= 3\sin(\theta) \\
+&= 27 \int \sin^3(\theta) d\theta & dx &= 3\cos(\theta)d\theta \\
+&= 27\int (1 - \cos^2(\theta))\sin(\theta) d\theta & u &= \cos(\theta) \\
+&= -27 \int (1 - u^2)du & du &= -\sin(\theta) d\theta \\
+&= 9u^3 - 27u + C \\
+&= 9\cos^3(\theta) - 27\cos(\theta) + C \\
+&= 9\cos^3\left(\arcsin\left(\frac{x}{3}\right)\right) - 27\cos\left(\arcsin\left(\frac{x}{3}\right)\right) + C \\
+&= 9\left(1 - \left(\frac{x}{3}\right)^2\right)^{\frac{3}{2}} - 27\sqrt{1 - \left(\frac{x}{3}\right)^2} + C
+\end{align*}
+}
+
+\newproblem{trigsub:sinsub5}{%
+Compute $\int e^{4x}\sqrt{1 - e^{2x}} dx$.}{%
+\begin{align*}
+\int e^{4x}\sqrt{1 - e^{2x}} dx &= \int u^3\sqrt{1-u^2} du & u &= e^x\\
+&= \int \sin^3(\theta) \sqrt{1 - \sin^2(\theta)} \cos(\theta)d\theta & u &= \sin(\theta)\\
+&= \int \sin^3(\theta) \cos^2(\theta) d\theta \\
+&= \int \sin^2(\theta) \cos^2(\theta) \sin(\theta) d\theta \\
+&= \int \left(1 - \cos^2(\theta)\right) \cos^2(\theta) \sin(\theta)d\theta & v &= \cos(\theta) \\
+&= -\int\left(1-v^2\right) v^2 dv \\
+&= \int v^4 - v^2 dv \\
+&= \frac{1}{5}v^5 - \frac{1}{3} v^3 + C \\
+&= \frac{1}{5} \cos^5(\theta) - \frac{1}{3}\cos^3(\theta) + C \\
+&= \frac{1}{5} \cos^5\left(\mbox{ arcsin}(e^x)\right) - \frac{1}{3}\cos^3(\mbox{ arcsin}(e^x)) + C \\
+&= \frac{1}{5} \left(1 - e^{2x}\right)^{\frac{5}{2}} - \frac{1}{3}\left(1 - e^{2x}\right)^{\frac{3}{2}} + C
+\end{align*}
+}
+
+\newproblem{trigsub:sinsub6}{%
+Compute $\int \frac{e^t}{\sqrt{4 - e^{2t}}}dt$}{%
+\begin{align*}
+\int \frac{e^t}{\sqrt{4 - e^{2t}}} dt &= \int \frac{du}{\sqrt{4 - u^2}} & u &= e^t & du &= e^t dt \\
+&= \int \frac{2\cos(\theta)d\theta}{\sqrt{4 - 4\sin^2(\theta)}} & u &= 2\sin(\theta) & du &= 2\cos(\theta) d\theta \\
+&= \int d\theta \\
+&= \theta + C \\
+&= \mbox{arcsin}\left(\frac{u}{2}\right) + C \\
+&= \mbox{arcsin}\left(\frac{e^t}{2}\right) + C
+\end{align*}
+}
+
+\newproblem{trigsub:cossub1}{%
+Compute $\int \frac{1}{y\sqrt{1-y^2}}dy.$}{%
+\begin{align*}
+\int \frac{1}{y \sqrt{1-y^2}} dy &= \int \frac{-\sin(\theta)d\theta}{\cos(\theta)\sqrt{1 - \cos^2(\theta)}} & y &= \cos(\theta) & dy &= -\sin(\theta)d\theta \\
+&= \int \frac{-d\theta}{\cos(\theta)} \\
+&= - \int \sec(\theta) d\theta \\
+&= - \ln|\sec(\theta) + \tan(\theta)| + C \\
+&= - \ln|\sec(\mbox{arccos}(y)) + \tan(\mbox{arccos}(y))| + C \\
+&= - \ln|\frac{1}{\cos(\mbox{arccos}(y))} + \frac{\sin(\mbox{arccos}(y))}{\cos(\mbox{arccos}(y))} | + C \\
+&= - \ln|\frac{1}{y} + \frac{\sqrt{1 - y^2}}{y} | + C
+\end{align*}
+}
+
+
+\newproblem{trigsub:secsub1}{%
+Compute $$\int t^3 \sqrt{t^2 - 4}dt$$.
+\textbf{Hints:} you will need to use the facts $\frac{d}{d\theta}\tan(\theta) = \sec^2(\theta)$ and $1 + \tan^2(\theta) = \sec^2(\theta)$.}{%
+\begin{align*}
+\int t^3 \sqrt{t^2 -4} dt &= \int (2 \sec(\theta))^3 \underbrace{\sqrt{4 \sec^2(\theta) - 4}}_\textbf{2$\tan(\theta)$} \left(2\sec(\theta)\tan(\theta)\right) d\theta & t &= 2 \sec(\theta) \\
+&= 32 \int \tan^2(\theta) \sec^4(\theta) d\theta \\
+&= 32 \int \tan^2(\theta)\sec^2(\theta)\sec^2(\theta)d\theta \\
+&= 32 \int \tan^2(\theta)(1 + \tan^2(\theta))\sec^2(\theta) d\theta \\
+&= 32 \int u^2(1 + u^2) du & u &= \tan(\theta) \\
+&= \frac{32}{3} u^3 + \frac{32}{5}u^5 + C \\
+&= \frac{32}{3} \tan^3(\theta) + \frac{32}{5}\tan^5(\theta) + C \\
+&= \frac{32}{3} \tan^3\left(\mbox{arcsec}\left(\frac{t}{2}\right)\right) + \frac{32}{5} \tan^5\left(\mbox{arcsec}\left(\frac{t}{2}\right)\right) + C \\
+&= \frac{32}{3} \left(\left(\frac{t}{2}\right)^2 - 1\right)^\frac{3}{2} + \frac{32}{5} \left(\left(\frac{t}{2}\right)^2 - 1\right)^\frac{5}{2} + C
+\end{align*}
+}
+
+\newproblem{trigsub:lnsin}{%
+Compute $\int\frac{\ln^5(t)}{t\sqrt{1-\ln^2(t)}}dt$.}{%
+\begin{align*}
+\int\frac{\ln^5(t)}{t\sqrt{1-\ln^2(t)}}dt &= \int \frac{u^5}{\sqrt{1-u^2}} du & u = \ln(t) \hspace{1pc} du = \frac{1}{t} dt \\
+\int \frac{\sin^5(\theta)\cos(\theta)d\theta}{\sqrt{1-\sin^2(\theta)}} & u = \sin(\theta) \hspace{1pc} du = \cos(\theta)d\theta \\
+&= \int \sin^5(\theta)d\theta \\
+&= \int \sin^4(\theta)\sin(\theta)d\theta \\
+&= \int \left(1 - \cos^2(\theta)\right)^2 \sin(\theta) d\theta \\
+&= -\int (1-v^2)^2 dv & v = \cos(\theta) \hspace{1pc} dv = -\sin(\theta)d\theta \\
+&= \int -v^4 + 2v^2 -1 dv \\
+&= \frac{-1}{5} v^5 + \frac{2}{3} v^3 - v + C \\
+&= \frac{-1}{5} \cos^5(\theta) + \frac{2}{3} \cos^3(\theta) - \cos(\theta) + C \\
+&= \frac{-1}{5} \left(1 - \ln^2(t)\right)^{\frac{5}{2}} \\
+&+ \frac{2}{3}\left(1 - \ln^2(t)\right)^{\frac{3}{2}} - \sqrt{1 - \ln^2(t)} + C
+\end{align*}
+where in the last line we have used the fact that $\theta = \mbox{ arcsin}(\ln(t)$ and the fact that $\cos(\arcsin(y)) = \sqrt{1 - y^2}$. }
+
+\newproblem{trigsub:lnsec}{%
+Compute $\int \frac{1}{t\ln(t)\sqrt{\ln^2(t)-1}}dt$.}{%
+\begin{align*}
+\int \frac{1}{t\ln(t)\sqrt{\ln^2(t)-1}}dt &= \int \frac{1}{u\sqrt{u^2-1}}du & u = \ln(t) \hspace{1pc} du = \frac{1}{t} dt \\
+&= \int \frac{\sec(\theta)\tan(\theta)}{\sec(\theta)\sqrt{\sec^2(\theta) - 1}} d\theta & u = \sec(\theta) \hspace{1pc} du = \sec(\theta)\tan(\theta)d\theta \\
+&= \int d\theta \\
+&= \theta + C \\
+&= \mbox{arcsec}(u) + C \\
+&= \mbox{arcsec}(\ln(t)) + C
+\end{align*}}
+
+\newproblem{trigsub:exp}{%
+Compute $\int \frac{dx}{\sqrt{1-e^{2x}}}$.}{%
+\begin{align*}
+\int \frac{dx}{\sqrt{1-e^{2x}}} &= \int \frac{du}{u\sqrt{1-u^2}} & u = e^x \hspace{1pc} \frac{du}{u} = dx \\
+&= \int \frac{\cos(\theta)}{\sin(\theta)\sqrt{1-\sin^2(\theta)}} & u = \sin(\theta) \hspace{1pc} du = \cos(\theta)d\theta  \\
+&= \int \csc(\theta) d\theta \\
+&= - \ln|\csc(\theta) + \cot(\theta)| + C \\
+&= - \ln|\csc(\mbox{arcsin}(u)) + \cot(\mbox{arcsin}(u))| + C \\
+&= - \ln|\frac{1}{u} + \frac{\sqrt{1-u^2}}{u}| + C \\
+&= \ln|\frac{e^x}{1 + \sqrt{1 - e^{2x}}}|  +C \\
+&= x - \ln(1 + \sqrt{1 - e^{2x}}) + C  
+\end{align*}}
+
+\newproblem{trigsub:arctansub}{%
+Compute $\int \frac{1}{(1+x^2)\sqrt{\mbox{arctan}^2(x)-1}}dx$.}{%
+\begin{align*}
+&\int \frac{1}{(1+x^2)\sqrt{\mbox{arctan}^2(x)-1}}dx \\
+= &\int \frac{1}{\sqrt{u^2-1}} du & u = \mbox{arctan}(x) \hspace{1pc} du = \frac{1}{1+x^2}dx \\
+= &\int \frac{\sec(\theta)\tan(\theta)}{\sqrt{\sec^2(\theta)-1}}d\theta & u = \sec(\theta) \hspace{1pc} du = \sec(\theta)\tan(\theta)d\theta \\
+= &\int \sec(\theta) d\theta \\
+= &\ln|\sec(\theta) + \tan(\theta)| + C \\
+= &\ln|u + \sqrt{u^2-1} | + C & \mbox{arcsec}(u) = \theta \\
+= &\ln|\mbox{arctan}(x) + \sqrt{\mbox{arctan}^2(x) - 1}| + C
+\end{align*}}
+
+\newproblem{trigsub:sqrtsub}{%
+Compute $\int \frac{1}{\sqrt{x}+x^{\frac{3}{2}}}dx$.}{%
+\begin{align*}
+\int \frac{1}{\sqrt{x} + x^{\frac{3}{2}}} &= \int \frac{2u du}{u(1+u^2)} & u = \sqrt{x} \hspace{1pc} \underbrace{du = \frac{1}{2\sqrt{x}}dx}_\textrm{2udu = dx} \\
+&= 2\int \frac{du}{1+u^2} \\
+&= 2\mbox{arctan}(u) \\
+&= 2\mbox{arctan}(\sqrt{x})
+\end{align*}
+}

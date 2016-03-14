@@ -1,0 +1,187 @@
+\newproblem{seqseries:quiz1}{%
+\begin{enumerate}
+\item Find
+\begin{align*}
+\lim_{n \to \infty} \frac{n^2 + n + 1}{3n^2 - n - 2}
+\end{align*}
+\item Find an example of a sequence $a_n$ which is bounded but not convergent.
+\end{enumerate}}{%
+\begin{enumerate}
+\item
+\begin{align*}
+\lim_{n \to \infty} \frac{n^2 + n + 1}{3n^2 - n - 2} &= \lim_{n \to \infty}\left(\frac{n^2}{n^2}\right) \frac{1 + \frac{1}{n} + \frac{1}{n^2}}{3 - \frac{1}{n} - \frac{2}{n^2}} \\
+&= \lim_{n \to \infty} \frac{1 + \frac{1}{n} + \frac{1}{n^2}}{3 - \frac{1}{n} - \frac{2}{n^2}} \\
+&= \frac{1}{3}
+\end{align*}
+\item An example is given by $a_n = (-1)^n$.
+\end{enumerate}
+}
+
+\newproblem{seqseries:quiz2}{%
+\begin{enumerate}
+\item
+Find
+\begin{align*}
+\lim_{n \to \infty} \frac{3n^2 + n + 1}{n^2 - n - 2}
+\end{align*}
+\item Find an example of a sequence $a_n$ which is bounded but not convergent.
+\end{enumerate}}{%
+\begin{enumerate}
+\item
+\begin{align*}
+\lim_{n \to \infty} \frac{3n^2 + n + 1}{n^2 - n - 2} &= \lim_{n \to \infty}\left(\frac{n^2}{n^2}\right) \frac{3 + \frac{1}{n} + \frac{1}{n^2}}{1 - \frac{1}{n} - \frac{2}{n^2}} \\
+&= \lim_{n \to \infty} \frac{3 + \frac{1}{n} + \frac{1}{n^2}}{1 - \frac{1}{n} - \frac{2}{n^2}} \\
+&= 3
+\end{align*}
+\item An example is given by $a_n = (-1)^n$.
+\end{enumerate}
+}
+
+\newproblem{seqseries:geom2/x}{%
+If $x > 2$, use the geometric series formula to find $\sum_{n=0}^\infty \frac{2^{n+1}}{x^n}$.}{%
+\begin{align*}
+\sum_{n=0}^\infty \frac{2^{n+1}}{x^n} &= 2 \sum_{n=0}^\infty \frac{2^n}{x^n} \\
+&= 2\sum_{n=0}^\infty \left(\frac{2}{x}\right)^n \\
+&= \frac{2}{1 - \frac{2}{x}}
+\end{align*}
+}
+
+\newproblem{seqseries:pftelescope}{%
+Let $a_n = \frac{1}{n^2-n}$ and $S_N = \sum_{k=2}^N a_n$.
+\begin{enumerate}
+\item Use partial fractions to rewrite $a_n$.
+\item Use part (a) to write out $S_2$, $S_3$ and $S_4$ explicitly and notice how terms cancel.  Generalize this to find a formula for $S_N$.
+\item Compute $\sum_{k=2}^\infty a_n \left(= \lim_{N \to \infty} S_N \right)$.
+\end{enumerate}}{%
+\begin{enumerate}
+\item 
+\begin{align*}
+\frac{1}{n^2 - n} &= \frac{A}{n-1} + \frac{B}{n} \\
+1 &= An + B(n-1)
+\end{align*}
+so that $A = 1$ and $B = -1$ and $\frac{1}{n^2-n} = \frac{1}{n-1} - \frac{1}{n}$
+\item 
+\begin{align*}
+S_2 &= \underbrace{1 - \frac{1}{2}}_\textrm{$a_2$} \\
+S_3 &= \underbrace{1 - \frac{1}{2}}_\textrm{$a_2$} + \underbrace{\frac{1}{2} - \frac{1}{3}}_\textrm{$a_3$} \\
+&= 1 - \frac{1}{3} \\
+S_4 &= \underbrace{1 - \frac{1}{2}}_\textrm{$a_2$} + \underbrace{\frac{1}{2} - \frac{1}{3}}_\textrm{$a_3$} + \underbrace{\frac{1}{3} - \frac{1}{4}}_\textrm{$a_4$} \\
+&= 1 - \frac{1}{4}
+\end{align*}
+in general $S_N = 1 - \frac{1}{N}$.
+\item $\lim_{N \to \infty} S_N = 1$.
+\end{enumerate}
+}
+
+\newproblem{seqseries:serieslist}{%
+Determine whether the following series converge:
+\begin{enumerate}
+\item $\sum_{n=1}^\infty \frac{1}{n^3}$
+\item $\sum_{n=1}^\infty \frac{e^n}{n^3}$
+\item $\sum_{n=3}^\infty \frac{1}{n^3 + n -1}$
+\item $\sum_{n=1}^\infty \left(\frac{n^3}{n!}\right)^n$
+\item $\sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}$
+\item $\sum_{n=2}^\infty \frac{1}{n \ln(n)}$
+\item $\sum_{n=1}^\infty e^{-\left(\ln(n)\right)^2}$ (Hints: $a^{bc} = (a^b)^c$ and $e^{- \ln(n)} = \frac{1}{n}$)
+\end{enumerate}}{%
+\begin{enumerate}
+\item We can use the integral test for this. Since $\int_1^\infty \frac{1}{x^3} dx < \infty$ we just have to check that $\frac{1}{x^3}$ is a positive decreasing function.  It is clearly positive for $x > 0$, so that is not an issue.  To check that it is decreasing, take a derivative.  $\frac{d}{dx}\frac{1}{x^3} = \frac{-3}{x^4} < 0$.  Since the derivative is negative, the function is decreasing.
+\item This sum diverges.  We can see this by applying the $n^{th}$ term test:
+\begin{align*}
+\lim_{n \to \infty} a_n &= \lim_{n \to \infty} \frac{e^n}{n^3} = \infty
+\end{align*}
+This limit would have to be zero for the sum to have any hope of converging.
+\item We can do this with a limit comparison test.  Call $b_n = \frac{1}{n^3}$.  Then
+\begin{align*}
+\lim_{n \to \infty} \frac{a_n}{b_n} &= \lim_{n \to \infty} \frac{n^3}{n^3 + n - 1} = 1
+\end{align*}
+Since the limit is $1$, both sequences are positive, and $\sum_{n=0}^\infty\frac{1}{n^3} < \infty$, it follows that $\sum_{n=0}^\infty \frac{1}{n^3 + n -1}$ converges.
+\item This sum converges.  We can see this with the root test.
+\begin{align*}
+\lim_{n \to \infty} \sqrt[n]{|a_n|} &= \lim_{n \to \infty} \frac{n^3}{n!} = 0
+\end{align*}
+so the series converges.
+\item This series converges for all $x$ and we can see this with the ratio test.
+\begin{align*}
+\lim_{n \to \infty} |\frac{a_{n+1}}{a_n}| &= \lim_{n \to \infty} \frac{\left(\frac{x^{2(n+1)+1}}{(2(n+1)+1)!}\right)}{\left(\frac{x^{2n+1}}{(2n+1)!}\right)} \\
+&= \lim_{n \to \infty} \frac{x^2}{(2n+3)(2n+2)} = 0
+\end{align*}
+so this sum converges for all $x$.
+\item We can solve this with the integral test once we check that the function $\frac{1}{x\ln(x)}$ is positive and decreasing on $(2,\infty)$.  It is clearly positive, so we just need to check that it is decreasing.
+\begin{align*}
+\frac{d}{dx} \frac{1}{x \ln(x)} &= -\frac{\ln(x) + 1}{(x \ln(x))^2} < 0
+\end{align*}
+for $x \in (2,\infty)$.  We can now compare to the integral
+\begin{align*}
+\int_3^\infty \frac{1}{x\ln(x)} dx &= \lim_{b \to \infty} \int_3^b \frac{1}{x\ln(x)} dx \\
+&= \lim_{b \to \infty} \int_{x = 3}^{x = b} \frac{1}{u} du & u = \ln(x) \hspace{1pc} du = \frac{1}{x} dx \\
+&= \lim_{b \to \infty} \left[\ln|u| \right]_{x=3}^{x=b} \\
+&= \lim_{b \to \infty} \left[\ln|\ln(x)| \right]_3^b = \infty
+\end{align*}
+so the sum diverges.
+\item This sum converges, which we can see by direct comparison to $\frac{1}{n^3}$ (or any power of $n$ that converges).  To see this, observe that $e^{-\left(\ln(n)\right)^2} = \left(e^{-\ln(n)}\right)^{\ln(n)} = \frac{1}{n^{\ln(n)}}$ and for $n$ large, $e^{-\left(\ln(n)\right)^2}$ will be strictly less than $\frac{1}{n^3}$, since $\ln(n) \to \infty$.
+\end{enumerate}
+}
+
+\newproblem{seqseries:serieslist2}{%
+Determine whether the following series converge.  If the series depends on $x$, determine for which values of $x$ it converges.
+\begin{enumerate}
+\item $\sum_{n=0}^\infty e^{-nx}$
+\item $\sum_{n=1}^\infty \frac{1}{n^6 + 5n}$
+\item $\sum_{n=1}^\infty \frac{n!}{e^n}$
+\item $\sum_{n=1}^\infty \frac{\ln(n)}{n}$
+\item $\sum_{n=1}^\infty \left(1 - \frac{1}{n}\right)^n$
+\end{enumerate}}{%
+\begin{enumerate}
+\item Notice that $e^{-nx} = \left(\frac{1}{e^x}\right)^n$ and we know that this sum converges if and only if $\left|\frac{1}{e^x}\right| < 1$ which is if and only if $e^x > 1$. So this sum converges exactly for $x > 0$.
+\item We can do this by limit comparison.  We know that $\sum_{n=1}^\infty \frac{1}{n^6}$ converges, so we just need to find the limit of the ratio of the summands in these two series.
+\begin{align*}
+\lim_{n \to \infty} \frac{\frac{1}{n^6}}{\frac{1}{n^6 + 5n}} &= \lim_{n \to \infty} \frac{n^6 + 5n}{n^6} \\
+&= 1.
+\end{align*}
+Since this limit is a positive finite number and $\sum_{n=1}^\infty \frac{1}{n^6}$ converges, we know that $\sum_{n=1}^\infty \frac{1}{n^6 + 5n}$ converges.
+\item We can do this with the term test.  Recall that $\sum_{n=0}^\infty a_n$ does not converges if $\lim_{n \to \infty} a_n \neq 0$ or does not exist. But $\lim_{n \to \infty} \frac{n!}{e^n} = \infty$, so this sum cannot converge.
+\item This problem can be solved with the integral test.  Notice that $\frac{\ln(x)}{x} \geq 0$ for $x \geq 1$ and that $\frac{d}{dx} \frac{ln(x)}{x} = \frac{1 - x\ln(x)}{x^2} < 0$ so long as $1 - x \ln(x) < 0$, which is true for sufficiently large $x$.  For example $\ln(x) > 1$ for $x > e$ and clearly $x > 1$ for $x > e$, so on the interval $(3,\infty)$ the function $\frac{\ln(x)}{x}$ is decreasing.  We can then apply the integral test.
+\begin{align*}
+\int_3^\infty \frac{\ln(x)}{x}dx &= \lim_{b \to \infty} \int_3^b \frac{\ln(x)}{x}dx \\
+&= \lim_{b \to \infty} \int_{\ln(3)}^{\ln(b)} u du \\
+&= \lim_{b \to \infty} \frac{1}{2}u^2|_{\ln(3)}^{\ln(b)} \\
+&= \infty.
+\end{align*}
+From this, we see that $\sum_{n=1}^\infty \frac{\ln(n)}{n}$ does not converge.
+\item This question may have been a little tricky.  Although it looks like a good candidate for the root test, the terms here are genuinely not comparable to a geometric series (which is what the root test is checking for).  Instead, we can solve this with the term test if we recall that $\lim_{n \to \infty} \left(1 + \frac{x}{n}\right)^n = e^x$.  From this, we see that $\lim_{n \to \infty} \left(1 - \frac{1}{n}\right)^n = e^{-1} \neq 0$, so the series cannot converge.
+\end{enumerate}
+}
+
+\newproblem{seqseries:quiz3}{%
+Determine whether or not the series $\sum_{n=1}^\infty n e^{-n}$ converges.
+}{%
+There are many ways to solve this problem.  The easiest is probably the root test, so long as you know that $\lim_{n \to \infty} \sqrt[n]{n} = 1$.  With this, we find that
+\begin{align*}
+\lim_{n \to \infty} \sqrt[n]{ne^{-n}} &= \lim_{n \to \infty} \sqrt[n]{n} e^{-1} \\
+&= e^{-1} < 1
+\end{align*}
+so the series converges.  The ratio test also works.
+\begin{align*}
+\lim_{n \to \infty} \frac{(n+1)e^{-(n+1)}}{ne^{-n}} &= \lim_{n \to \infty} \frac{n+1}{n} e^{-1} \\
+&= e^{-1} < 1
+\end{align*}
+so again the series converges.  The integral test can also be used to solve this problem.
+}
+
+\newproblem{seqseries:quiz4}{%
+Determine whether or not the series $\sum_{n=1}^\infty n e^{-2n}$ converges.
+}
+{%
+There are many ways to solve this problem.  The easiest is probably the root test, so long as you know that $\lim_{n \to \infty} \sqrt[n]{n} = 1$.  With this, we find that
+\begin{align*}
+\lim_{n \to \infty} \sqrt[n]{ne^{-2n}} &= \lim_{n \to \infty} \sqrt[n]{n} e^{-2} \\
+&= e^{-2} < 1
+\end{align*}
+so the series converges.  The ratio test also works.
+\begin{align*}
+\lim_{n \to \infty} \frac{(n+1)e^{-2(n+1)}}{ne^{-2n}} &= \lim_{n \to \infty} \frac{n+1}{n} e^{-2} \\
+&= e^{-2} < 1
+\end{align*}
+so again the series converges.  The integral test can also be used to solve this problem.
+}

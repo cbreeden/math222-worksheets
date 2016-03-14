@@ -1,0 +1,147 @@
+\newproblem{intbyparts:arcsine}{%
+Compute $\int \arcsin(x) dx$.}{%
+\begin{align*}
+\int \arcsin(x) dx &= \int \underbrace{\arcsin(x)}_\textrm{F(x)} \underbrace{dx}_\textrm{G'(x)dx} \\
+&= \underbrace{x}_\textrm{G(x)} \underbrace{\arcsin(x)}_\textrm{F(x)} - \int \underbrace{x}_\textrm{G(x)}\underbrace{\frac{1}{\sqrt{1-x^2}}dx}_\textrm{F'(x)dx} \\
+&= x \arcsin(x) + \sqrt{1-x^2} + C
+\end{align*}}
+
+\newproblem{intbyparts:ln}{%
+Compute $\int \ln(x)dx$.}{%
+\begin{align*}
+\int \ln(x) dx &= \int \underbrace{\ln(x)}_\textrm{F(x)} \underbrace{dx}_\textrm{G'(x)dx} \\
+&= \underbrace{x}_\textrm{G(x)} \underbrace{\ln(x)}_\textrm{F(x)} - \int \underbrace{x}_\textrm{G(x)} \underbrace{\frac{1}{x} dx}_\textrm{F'(x)dx} \\
+&= x \ln(x) - x + C
+\end{align*}}
+
+\newproblem{intbyparts:arccos}{%
+Compute $\int \arccos(x) dx$.}{%
+\begin{align*}
+\int \arccos(x) dx &= \int \underbrace{\arccos(x)}_\textrm{F(x)} \underbrace{dx}_\textrm{G'(x)dx} \\
+&= \underbrace{x}_\textrm{G(x)} \underbrace{\arccos(x)}_\textrm{F(x)} - \int \underbrace{x}_\textrm{G(x)}\underbrace{\frac{-1}{\sqrt{1-x^2}}dx}_\textrm{F'(x)dx} \\
+&= x \arccos(x) - \sqrt{1-x^2} + C
+\end{align*}}
+
+\newproblem{intbyparts:arctan}{%
+Compute $\int \arctan(x) dx$.}{%
+\begin{align*}
+\int \arctan(x) dx &= \int \underbrace{\arctan(x)}_\textrm{F(x)} \underbrace{dx}_\textrm{G'(x)dx} \\
+&= \underbrace{x}_\textrm{G(x)} \underbrace{\arctan(x)}_\textrm{F(x)} - \int \underbrace{x}_\textrm{G(x)}\underbrace{\frac{1}{1+x^2}dx}_\textrm{F'(x)dx} \\
+&= x \arcsin(x) - \frac{1}{2}\ln|1 + x^2| + C
+\end{align*}}
+
+\newproblem{intbyparts:sec3}{%
+Compute $\int \sec^3(x) dx$.}{%
+\begin{align*}
+\int sec^3(x) dx &= \int \underbrace{\sec(x)}_\textrm{F(x)} \underbrace{sec^2(x)dx}_\textrm{G'(x)dx} \\
+&= \underbrace{sec(x)}_\textrm{F(x)} \underbrace{\tan(x)}_\textrm{G(x)} - \int \underbrace{\tan(x)}_\textrm{G(x)} \underbrace{\tan(x) \sec(x) dx}_\textrm{F'(x)dx} \\
+&= \sec(x)\tan(x) - \int \tan^2(x) \sec(x) dx \\
+&= \sec(x)\tan(x) - \int \left(\sec^2(x) - 1 \right) \sec(x) dx \\
+2 \int \sec^3(x) dx &= \sec(x) \tan(x) - \int \sec(x) dx \\
+&= \sec(x)\tan(x) - \ln|\sec(x) + \tan(x)| + C \\
+\int \sec^3(x) &= \frac{1}{2}\sec(x)\tan(x) - \frac{1}{2}\ln|\sec(x) + \tan(x)| + C
+\end{align*}}
+
+\newproblem{intbyparts:xnlog}{%
+Let $n \neq -1$ and compute $\int x^n \ln(x) dx$.}{%
+\begin{align*}
+\int x^n \ln(x) dx &= \int \underbrace{\ln(x)}_\textrm{F(x)} \underbrace{x^n dx}_\textrm{G'(x)dx} \\
+&= \underbrace{\frac{1}{n+1}x^{n+1}}_\textrm{G(x)} \underbrace{\ln(x)}_\textrm{F(x)} - \int \underbrace{\frac{1}{n+1}x^{n+1}}_\textrm{G(x)} \underbrace{\frac{1}{x} dx}_\textrm{F'(x)dx} \\
+&= \frac{1}{n+1} x^{n+1} \ln(x) - \frac{1}{(n+1)^2} x^{n+1} + C
+\end{align*}}
+
+\newproblem{intbyparts:gamma}{%
+For $x > 0$, call $\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt$.  Show that $\Gamma(x+1) = x \Gamma(x)$.}{%
+\begin{align*}
+\Gamma(x+1) &= \int_0^\infty \underbrace{t^{x}}_\textrm{F(x)} \underbrace{e^{-t} dt}_\textrm{G'(x)dx} \\
+&= \underbrace{t^{x}}_\textrm{F(x)}\underbrace{-e^{-t}}_\textrm{G(x)}|_{0}^{\infty}+\int_{0}^{\infty} \underbrace{x t^{x-1}}_\textrm{F'(x)}\underbrace{e^{-t}dt}_\textrm{G'(x)dx} \\
+&= x \Gamma(x)
+\end{align*}
+}
+
+\newproblem{intbyparts:taylorfo}{%
+Suppose that $h$ is twice continuously differentiable.  Use integration by parts and the fundamental theorem of calculus to show that 
+\begin{align*}
+h(x) = h(0) + h^{'}(0)x + \int_0^x (x-t) h^{''}(t) dt
+\end{align*}}{%
+\begin{align*}
+h(x) &=  h(0) + \int_{0}^{x}\underbrace{h^{'}(t)}_\textrm{F(t)}\underbrace{dt}_\textrm{G'(t)dt} \\
+&= h(0) + \underbrace{h^{'}(x)}_\textrm{F(x)} \underbrace{x}_\textrm{G(x)} - \int_0^x t h^{''}(t) dt \\
+&= h(0) + x\left(h^{'}(0) + \int_0^x h^{''}(t) dt \right) - \int_0^x t h^{''}(t) dt \\
+&= h(0) + h^{'}(0)x + \int_0^x (x-t) h^{''}(t) dt
+\end{align*}
+}
+
+\newproblem{intbyparts:expasinb}{%
+Compute $\int e^{ax}\sin(bx)dx$ where $a,b \neq 0$.}{%
+\begin{align*}
+\int e^{ax}\sin(bx)dx &= \int \underbrace{e^{ax}}_\textrm{F(x)}\underbrace{\sin(bx)dx}_\textrm{G'(x)dx} \\
+&= \underbrace{e^{ax}}_\textrm{F(x)} \underbrace{\frac{-1}{b}\cos(bx)}_\textrm{G(x)} - \int \underbrace{\frac{-1}{b}\cos(bx)}_\textrm{G(x)} \underbrace{ae^{ax} dx}_\textrm{F'(x)dx} \\
+&= \frac{-1}{b}e^{ax}\cos(b(x)) + \frac{a}{b}\int \underbrace{e^{ax}}_\textrm{F(x)} \underbrace{\cos(bx)dx}_\textrm{G'(x)dx} \\
+&= -\frac{1}{b}e^{ax}\cos(b(x)) + \frac{a}{b}\left[\underbrace{e^{ax}}_\textrm{F(x)} \underbrace{\frac{1}{b}\sin(bx)}_\textrm{G(x)} - \int \underbrace{\frac{1}{b}\sin(bx)}_\textrm{G(x)}\underbrace{ae^{ax}dx}_\textrm{F'(x)dx} \right] \\
+&= -\frac{1}{b}e^{ax}\cos(bx) + \frac{a}{b^2}e^{ax}\sin(bx) - \left(\frac{a}{b}\right)^2 \int e^{ax}\sin(bx) dx \\
+\left(1 + \left(\frac{a}{b}\right)^2\right) \int e^{ax} \sin(bx) dx &= -\frac{1}{b}e^{ax}\cos(bx) + \frac{a}{b^2}e^{ax}\sin(bx) \\
+\int e^{ax} \sin(bx) dx &= \frac{1}{1 + \left(\frac{a}{b}\right)^2}\left(\frac{a}{b^2}e^{ax}\sin(bx) - \frac{1}{b}e^{ax}\cos(bx)\right)
+\end{align*}}
+
+\newproblem{intbyparts:expacosb}{%
+Compute $\int e^{ax}\cos(bx)dx$ where $a,b\neq = 0$.}{%
+\begin{align*}
+\int e^{ax}\cos(bx)dx &= \int \underbrace{e^{ax}}_\textrm{F(x)}\underbrace{\cos(bx)dx}_\textrm{G'(x)dx} \\
+&= \underbrace{e^{ax}}_\textrm{F(x)} \underbrace{\frac{1}{b}\sin(bx)}_\textrm{G(x)} - \int \underbrace{\frac{1}{b}\sin(bx)}_\textrm{G(x)} \underbrace{ae^{ax} dx}_\textrm{F'(x)dx} \\
+&= \frac{1}{b}e^{ax}\sin(b(x)) - \frac{a}{b}\int \underbrace{e^{ax}}_\textrm{F(x)} \underbrace{\sin(bx)dx}_\textrm{G'(x)dx} \\
+&= \frac{1}{b}e^{ax}\sin(b(x)) - \frac{a}{b}\left[\underbrace{e^{ax}}_\textrm{F(x)} \underbrace{\frac{-1}{b}\cos(bx)}_\textrm{G(x)} - \int \underbrace{\frac{-1}{b}\cos(bx)}_\textrm{G(x)}\underbrace{ae^{ax}dx}_\textrm{F'(x)dx} \right] \\
+&= \frac{1}{b}e^{ax}\sin(bx) + \frac{a}{b^2}e^{ax}\cos(bx) - \left(\frac{a}{b}\right)^2 \int e^{ax}\cos(bx) dx \\
+\left(1 + \left(\frac{a}{b}\right)^2\right) \int e^{ax} \cos(bx) dx &= \frac{1}{b}e^{ax}\sin(bx) + \frac{a}{b^2}e^{ax}\cos(bx) \\
+\int e^{ax} \cos(bx) dx &= \frac{1}{1 + \left(\frac{a}{b}\right)^2}\left(\frac{a}{b^2}e^{ax}\sin(bx) + \frac{1}{b}e^{ax}\cos(bx)\right)
+\end{align*}}
+
+\newproblem{intbyparts:xmlnn}{%
+Assuming that $m \neq -1$, show that
+\begin{align*}
+\int x^m \left(\ln(x) \right)^n dx = \frac{1}{m+1}x^{m+1}\left(\ln(x)\right)^n - \frac{n}{m+1} \int x^{m} \left(\ln(x)\right)^{n-1} dx
+\end{align*}}{%
+\begin{align*}
+\int x^m \left(\ln(x) \right)^n dx &= \int  \underbrace{\left(\ln(x) \right)^n}_\textrm{F(x)} \underbrace{x^m dx}_\textrm{G'(x)dx} \\
+&= \underbrace{\frac{1}{m+1}x^{m+1}}_\textrm{G(x)} \underbrace{\left(\ln(x)\right)^n}_\textrm{F(x)} - \int \underbrace{\frac{1}{m+1}x^{m+1}}_\textrm{G(x)} \underbrace{n\frac{1}{x}\left(\ln(x)\right)^{n-1}dx}_\textrm{F'(x)dx} \\
+&= \frac{1}{m+1} x^{m+1} \left(\ln(x)\right)^n - \frac{n}{m+1} \int x^m \left( \ln(x) \right)^{n-1} dx
+\end{align*}
+}
+
+\newproblem{intbyparts:xln}{%
+Compute $\int x \ln(x) dx$.}{%
+\begin{align*}
+\int x \ln(x) dx &= \int  \underbrace{\ln(x)}_\textrm{F(x)} \underbrace{x dx}_\textrm{G'(x)dx} \\
+&= \underbrace{\frac{x^2}{2}}_\textrm{G(x)} \underbrace{\ln(x)}_\textrm{F(x)} - \int \underbrace{\frac{x^2}{2}}_\textrm{G(x)} \underbrace{\frac{1}{x}dx}_\textrm{F'(x)dx} \\
+&= \frac{1}{2}x^2 \ln(x) - \frac{1}{2}\int x dx \\
+&= \frac{1}{2}x^2 \ln(x) - \frac{1}{4}x^2 + C
+\end{align*}
+}
+
+\newproblem{intbyparts:xex}{%
+Compute $\int x e^x dx$.}{%
+\begin{align*}
+\int x e^x dx &= \int \underbrace{x}_\textrm{F(x)} \underbrace{e^x dx}_\textrm{G'(x) dx} \\
+&= \underbrace{x}_\textrm{F(x)} \underbrace{e^x}_\textrm{G(x)} - \int \underbrace{e^x}_\textrm{G(x)} \underbrace{dx}_\textrm{F'(x)dx} \\
+&= x e^x - e^x + C
+\end{align*}}
+
+\newproblem{intbyparts:exsin}{%
+Compute $\int e^x \sin(x) dx$.}{%
+\begin{align*}
+\int e^x \sin(x) dx &= \int \underbrace{e^x}_\textrm{F(x)} \underbrace{\sin(x)dx}_\textrm{G'(x)dx}\\
+&= \underbrace{e^x}_\textrm{F(x)} \underbrace{(-\cos(x))}_\textrm{G(x)} - \int \underbrace{-\cos(x)}_\textrm{G(x)} \underbrace{e^xdx}_\textrm{F'(x)dx} + C \\
+&= -e^x \cos(x) + \int e^x \cos(x) dx + C \\
+&= -e^x \cos(x) + \int \underbrace{e^x}_\textrm{F(x)} \underbrace{\cos(x)dx}_\textrm{G'(x)dx} + C\\
+&=-e^x \cos(x) + \left[\underbrace{e^x}_\textrm{F(x)} \underbrace{\sin(x)}_\textrm{G(x)} - \int \underbrace{\sin(x)}_\textrm{G(x)} \underbrace{e^x dx}_\textrm{F'(x)dx} \right] + C \\
+&= e^x \sin(x) - e^x \cos(x) - \int e^x \sin(x) dx + C \\
+2 \int e^x \sin(x) dx &= e^{x}\left(\sin(x) - \cos(x)\right) + C \\
+&= e^{x}\left(\sin(x) - \cos(x)\right) + C
+\end{align*}}
+
+\newproblem{intbyparts:definite1}{%
+Compute $\int_0^1 \ln(2t + 1) dt$.}{%
+\begin{align*}
+\int_0^1 \ln(2t+1) dt &= \frac{1}{2}\int_{t = 0}^{t = 1} \underbrace{\ln(u)}_\textrm{F(u)} \underbrace{du}_\textrm{G'(u)du} & u = 2t + 1 \hspace{1pc} \frac{1}{2}du = dt \\
+&= \underbrace{u}_\textrm{G(u)} \underbrace{\ln(u)}_\textrm{F(u)}|_{t = 0}^{t = 1} - \int_{t = 0}^{t=1} \underbrace{u}_\textrm{G(u)} \underbrace{\frac{1}{u}du}_\textrm{F'(u)du} \\
+\end{align*}}

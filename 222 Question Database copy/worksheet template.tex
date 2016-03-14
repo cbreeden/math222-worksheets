@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  For use by the University of Wisconsin - Madison mathematics department. Please do not redistribute these files.                                                                                                                                                                 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,epsfig]{article}
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.3in
+\topmargin=-.75in
+\textheight=9in
+\parindent=0in
+\pagestyle{empty}
+\usepackage{probsoln}
+\input{testpoints}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                                                                                                                                                                          
+% Uncomment the lines below to have the questions from these files available below.  The packages are currently approximately in the order that the topics appear in the text.
+%                                                                                                                                                                                                                                          
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{background_222}    %Background questions for 222.
+%input{deforindef}               %Questions about the differences between definite and indefinite integrals
+%\input{intbyparts}               %Computation of integrals using integration by parts
+%\input{partialfrations}         %Computing integrals using polynomial division and partial fractions
+%\input{trigint}                      %Integrals of trigonometric functions
+%\input{trigsub}                    %Integrals computed using trigonometric substitution
+%\input{improper}                 %Existence, estimation and computation of improper integrals
+%\input{diffeq}                      %Separable and first order linear differential equations with no word problems.
+%\input{eulersMethod}         %Examples of using Euler's method to estimate solutions to ODEs 
+%\input{appdifeq}                 %Word problems using separable and first order linear differential equations.
+%\input{taylor}                      %Questions about Taylor polynomials and series, without error approximation
+%\input{littleoh}                    %Basics of little oh notation and Taylor approximation with little oh notation
+%\input{taylorerror}               %Questions about Taylor error approximation and convergence of Taylor series
+%\input{seqseries}               %Questions about sequences and series
+%\input{vectorprob}              %Problems about basic properties of vectors
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                                                                                      
+%  If you want to turn this into an answer key, delete the % in front of \showanswers below                                                                                          
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\showanswers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fill in the variables below to change the header information.                                                                                                                                                                                                                                                                                                                                                                                                                   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand \thisclass{222}                                                          %Put the course number here.
+\newcommand \thislecture{001}                                                    %Put the lecture number here.
+\newcommand \semester{Fall 2000}                                                %Put the semester here.
+\newcommand \thisdate{10/10/00}                                                        %Put the date here.
+\newcommand \instructions{Solve the following problems.}                        % Put worksheet instructions here.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                                                                                                                                                                          
+% Fill in the label of the questions you would like to use below.  Remember that you must uncomment the database file that you would like to draw questions from above.
+% For example, if you want to use the question bg222:deriv1 and bg222:deriv2 from the database background_222, then you need to uncomment the \input{background_222} 
+%command above, and then put bg222:deriv1 into the first set of brackets and bg222:deriv2 into the second set of brackets.                                                                                                                                               
+%                                                                                                                                                                                                                                          
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand \questionone{bg222:deriv1}                                              %Put the label of question 1 here
+\newcommand \questiontwo{bg222:deriv2}                                              %Put the label of question 2 here.
+\newcommand \questionthree{bg222:deriv3}                                                  %Put the label of question 3 here
+\newcommand \questionfour{bg222:ftoc1}                                              %Put the label of question 4 here
+\newcommand \questionfive{bg222:ftoc2}                                              %Put the label of question 5 here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The rest of this code makes the worksheet based on your choices above.                                                                                                                                                                                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+MATH \thisclass (\thislecture) \semester
+
+\ifthenelse{\boolean{showanswers}}{\textbf{Worksheet \thisdate Solutions} \hspace{1.5in}}{Worksheet \thisdate \  \vspace{.3cm}\\
+{Name:} {\underline {\hspace{2.5in}}}}  
+\vspace{2pc}
+
+%Instructions go here
+\ifthenelse{\boolean{showanswers}}{Please inform your TA if you find any errors in the solutions.}{\instructions}
+\vspace{2pc}
+
+\begin{enumerate}
+\item \useproblem{\questionone}\ifthenelse{\boolean{showanswers}}{\vspace{1pc}}{\vspace{17pc}}
+\item \useproblem{\questiontwo}\ifthenelse{\boolean{showanswers}}{\vspace{1pc}}{\vspace{17pc}}
+\item \useproblem{\questionthree}\ifthenelse{\boolean{showanswers}}{\vspace{1pc}}{\vspace{17pc}}
+\item \useproblem{\questionfour}\ifthenelse{\boolean{showanswers}}{\vspace{1pc}}{\vspace{17pc}}
+\item \useproblem{\questionfive}\ifthenelse{\boolean{showanswers}}{\vspace{1pc}}{\vspace{17pc}}
+\end{enumerate}
+
+\end{document}

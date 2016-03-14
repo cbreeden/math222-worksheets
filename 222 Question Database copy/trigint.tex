@@ -1,0 +1,236 @@
+\newproblem{trigint:cos2}{%
+Compute $\int \cos^2(x) dx$.}{%
+\begin{align*}
+\int \cos^2(x) dx &= \frac{1}{2} \int 1 + \cos(2x) dx \\
+&= \frac{1}{2} \int dx + \frac{1}{2} \int \cos(2x) dx \\
+&= \frac{1}{2}x + \frac{1}{4}\sin(2x) + C
+\end{align*}}
+
+\newproblem{trigint:sin2}{%
+Compute $\int \sin^2(x) dx$.}{%
+\begin{align*}
+\int \sin^2(x) dx &= \frac{1}{2} \int 1 - \cos(2x) dx \\
+&= \frac{1}{2} \int dx - \frac{1}{2} \int \cos(2x) dx \\
+&= \frac{1}{2}x - \frac{1}{4}\sin(2x) + C
+\end{align*}}
+
+\newproblem{trigint:cos2sin1}{%
+Compute $\int \cos^2(x)\sin(x) dx$.}{%
+\begin{align*}
+\int \cos^2(x)\sin(x) dx &= - \int u^2 du & u = \cos(x) \mbox{ } du = -\sin(x)dx \\
+&= - \frac{u^3}{3} + C \\
+&= - \frac{\cos^3(x)}{3} +C
+\end{align*}
+}
+
+\newproblem{trigint:cos1sin2}{%
+Compute $\int \cos(x)\sin^2(x)dx$.}{%
+\begin{align*}
+\int \cos(x)\sin^2(x) dx &= \int u^2 du & u = \sin(x) \mbox{ } du = \cos(x)dx \\
+&= \frac{u^3}{3} + C \\
+&= \frac{\sin^3(x)}{3} +C
+\end{align*}
+}
+
+\newproblem{trigint:cos3}{%
+Compute $\int \cos^3(x)dx$.}{%
+\begin{align*}
+\int \cos^3(x) dx &= \int \cos^2(x)\cos(x)dx \\
+&= \int (1 - \sin^2(x))\cos(x)dx  & u = \sin(x) \mbox{ } du = \cos(x)dx \\
+&= \int (1-u^2)du \\
+&= u - \frac{u^3}{3} + C \\
+&= \sin(x) - \frac{\sin^3(x)}{3} + C
+\end{align*}}
+
+\newproblem{trigint:sin3}{%
+Compute $\int \sin^3(x)dx$.}{%
+\begin{align*}
+\int \sin^3(x) dx &= \int \sin^2(x)\sin(x)dx \\
+&= \int (1 - \cos^2(x))\sin(x)dx  & u = \cos(x) \mbox{ } du = -\sin(x)dx \\
+&= - \int (1-u^2)du \\
+&= -u + \frac{u^3}{3} + C \\
+&= -\cos(x) + \frac{\cos^3(x)}{3} + C
+\end{align*}}
+
+\newproblem{trigint:sin4}{%
+Compute $\int \sin^4(x) dx$.}{%
+\begin{align*}
+\int \sin^4(x) dx &= \int \left( \sin^2(x) \right)^2 dx \\
+&= \frac{1}{4} \int \left(1 - \cos(2x) \right)^2 dx \\
+&= \frac{1}{4} \int 1 - 2\cos(2x) + \cos^2(2x) dx \\
+&= \frac{1}{4} \int 1 - 2\cos(2x) + \frac{1}{2}\left(1 + \cos(4x) \right)dx\\
+&= \frac{1}{4}x - \frac{1}{4}\sin(2x) + \frac{1}{8}x + \frac{1}{32}\sin(4x) + C \\
+&= \frac{3}{8}x - \frac{1}{4}\sin(2x) + \frac{1}{32}\sin(4x) + C
+\end{align*}}
+
+\newproblem{trigint:cos4}{%
+Compute $\int \cos^4(x) dx$.}{%
+\begin{align*}
+\int \cos^4(x) dx &= \int \left( \cos^2(x) \right)^2 dx \\
+&= \frac{1}{4} \int \left(1 + \cos(2x) \right)^2 dx \\
+&= \frac{1}{4} \int 1 + 2\cos(2x) + \cos^2(2x) dx \\
+&= \frac{1}{4} \int 1 + 2\cos(2x) + \frac{1}{2}\left(1 + \cos(4x) \right)dx\\
+&= \frac{1}{4}x + \frac{1}{4}\sin(2x) + \frac{1}{8}x + \frac{1}{32}\sin(4x) + C \\
+&= \frac{3}{8}x + \frac{1}{4}\sin(2x) + \frac{1}{32}\sin(4x) + C
+\end{align*}}
+
+\newproblem{trigint:cos2sin2}{%
+Compute $\int \cos^2(x) \sin^2(x) dx$.}{%
+\begin{align*}
+\int \cos^2(x) \sin^2(x) dx &= \int \left(\cos(x)\sin(x) \right)^2 dx \\
+&= \int \left( \frac{1}{2}\sin(2x) \right)^2 dx \\
+&= \frac{1}{4} \int \sin^2 (2x) dx \\
+&= \frac{1}{8} \int 1 - \cos(4x) dx \\
+&= \frac{1}{8}x - \frac{1}{32}\sin(4x) + C \\
+\end{align*}}
+
+\newproblem{trigint:cos1sin3}{%
+Compute $\int \cos(x) \sin^3(x) dx$.}{%
+\begin{align*}
+\int \cos(x) \sin^3(x) dx &= \int \cos(x) \sin^2(x) \sin(x) dx \\
+&= \int \cos(x) \left(1 - \cos^2(x)\right) \sin(x) dx & u = \cos(x) \mbox{ } du = -\sin(x)dx \\
+&= -\int u(1 - u^2)du \\
+&= -\frac{u^2}{2} + \frac{u^4}{4} + C \\
+&= -\frac{\cos^2(x)}{2} + \frac{\cos^4(x)}{4} + C
+\end{align*}}
+
+\newproblem{trigint:cos3sin1}{%
+Compute $\int \cos^3(x) \sin(x) dx$.}{%
+\begin{align*}
+\int \cos^3(x) \sin(x) dx &= \int \sin(x) \cos^2(x) \cos(x) dx \\
+&= \int \sin(x) \left(1 - \sin^2(x)\right) \cos(x) dx & u = \sin(x) \mbox{ } du = \cos(x)dx \\
+&= \int u(1 - u^2)du \\
+&= \frac{u^2}{2} - \frac{u^4}{4} + C \\
+&= \frac{\sin^2(x)}{2} - \frac{\sin^4(x)}{4} + C
+\end{align*}}
+
+\newproblem{trigint:cos5}{%
+Compute $\int \cos^5(x)dx$.}{%
+\begin{align*}
+\int \cos^5(x) dx &= \int \cos^4(x)\cos(x) dx \\
+&= \int \left( \cos^2(x) \right)^2\cos(x)dx \\
+&= \int \left( 1 - \sin^2(x) \right)^2 \cos(x) dx & u = \sin(x) \mbox{ } du = \cos(x)dx \\
+&= \int \left( 1 - u^2 \right)^2 du \\
+&= \int 1 - 2u^2 + u^4 du \\
+&= u - \frac{2}{3}u^3 + \frac{1}{5} u^5 + C \\
+&= \sin(x) - \frac{2}{3} \sin^3(x) + \frac{1}{5} \sin^5(x) + C
+\end{align*}}
+
+\newproblem{trigint:sin5}{%
+Compute $\int \sin^5(x) dx$.}{%
+\begin{align*}
+\int \sin^5(x) dx &= \int \sin^4(x)\sin(x) dx \\
+&= \int \left( \sin^2(x) \right)^2\sin(x)dx \\
+&= \int \left( 1 - \cos^2(x) \right)^2 \sin(x) dx & u = \cos(x) \mbox{ } du = -\sin(x)dx \\
+&= -\int \left( 1 - u^2 \right)^2 du \\
+&= -\int 1 - 2u^2 + u^4 du \\
+&= -u + \frac{2}{3}u^3 - \frac{1}{5} u^5 + C \\
+&= -\cos(x) + \frac{2}{3} \cos^3(x) - \frac{1}{5} \cos^5(x) + C
+\end{align*}}
+
+\newproblem{trigint:cos1sin4}{%
+Compute $\int \cos(x) \sin^4(x) dx$}{%
+\begin{align*}
+\int \cos(x) \sin^4(x) dx &= \int u^4 du & u = \sin(x) \mbox{ } du = \cos(x)dx \\
+&= \frac{1}{5}u^5 + C \\
+&= \frac{1}{5}\sin^5(x) + C
+\end{align*}
+}
+
+\newproblem{trigint:cos4sin1}{%
+Compute $\int \cos^4(x) \sin(x) dx$}{%
+\begin{align*}
+\int \cos^4(x) \sin(x) dx &= -\int u^4 du & u = \cos(x) \mbox{ } du = -\sin(x)dx \\
+&= -\frac{1}{5}u^5 + C \\
+&= -\frac{1}{5}\cos^5(x) + C
+\end{align*}
+}
+
+\newproblem{trigint:cos3sin2}{%
+Compute $\int \cos^3(x)\sin^2(x)dx$.}{%
+\begin{align*}
+\int \cos^3(x)\sin^2(x)dx &= \int \sin^2(x) \cos^2(x) \cos(x) dx \\
+&= \int \sin^2(x) \left(1 - \sin^2(x)\right) \cos(x) dx & u = \sin(x) \mbox{ } du = \cos(x)dx \\
+&= \int u^2 \left(1 - u^2 \right) du \\
+&= \frac{u^3}{3} - \frac{u^5}{5} + C \\
+&= \frac{\sin^3(x)}{3} - \frac{\sin^5(x)}{5} + C
+\end{align*}}
+
+\newproblem{trigint:cos2sin3}{%
+Compute $\int \cos^2(x)\sin^3(x)dx$.}{%
+\begin{align*}
+\int \cos^2(x)\sin^3(x)dx &= \int \cos^2(x) \sin^2(x) \sin(x) dx \\
+&= \int \cos^2(x) \left(1 - \cos^2(x)\right) \sin(x) dx & u = \cos(x) \mbox{ } du = -\sin(x)dx \\
+&= -\int u^2 \left(1 - u^2 \right) du \\
+&= -\frac{u^3}{3} + \frac{u^5}{5} + C \\
+&= -\frac{\cos^3(x)}{3} + \frac{\cos^5(x)}{5} + C
+\end{align*}}
+
+\newproblem{trigint: sin1sin2}{%
+Compute $\int \sin(x)\sin(2x)dx$.}{%
+\begin{align*}
+\int \sin(x) \sin(2x) dx &= \int \frac{1}{2}\left[\cos(x) - \cos(3x) \right]dx \\
+&= \frac{1}{2}\left[\sin(x) - \frac{1}{3}\sin(3x) \right] + C
+\end{align*}}
+
+\newproblem{trigint:sinnsinm}{%
+Compute $\int \sin(nx)\sin(mx) dx$ where not both of $n,m = 0$.  Remember not to divide by zero.}{%
+\begin{align*}
+\int &\sin(nx)\sin(mx)dx \\
+= &\int \frac{1}{2}\int\left[\cos\left((n-m)x\right) - \cos\left((n+m) x\right) \right] dx \\
+= &\begin{cases}\frac{1}{2}\left[\frac{1}{n-m}\sin\left((n-m)x\right) - \frac{1}{n+m}\sin\left((n+m)x\right)) \right] & \mbox{ if } (n-m),(n+m) \neq 0 \\
+\frac{1}{2} \left[x - \frac{1}{n+m}\sin\left((n+m)x\right) \right] & \mbox{ if } n-m = 0 \\
+\frac{1}{2} \left[\frac{1}{n-m}\sin\left((n-m)x\right) - x \right] & \mbox{ if } n+m = 0
+\end{cases}
+\end{align*}
+}
+
+\newproblem{trigint:(cos+sin)2}{%
+Compute $\int \left(\cos(x) + \sin(x)\right)^2 dx$.}{%
+\begin{align*}
+\int \left( \cos(x) + \sin(x) \right)^2 dx &= \int \cos^2(x) + 2\sin(x)\cos(x) + \sin^2(x) dx \\
+&= \int 1 + \sin(2x) dx \\
+&= x - \frac{1}{2} \cos(2x) + C
+\end{align*}}
+
+\newproblem{trigint:sec1}{%
+Compute $\int \sec(x) dx$ with the substitution $u = \sec(x)+\tan(x)$.}{%
+\begin{align*}
+\int \sec(x) dx &= \int \sec(x) \frac{\sec(x)+\tan(x)}{\sec(x)+\tan(x)} dx & u = \sec(x) + \tan(x)\\
+&= \int \frac{du}{u} & du = (\sec(x) \tan(x) + \sec^2(x))dx  \\
+&= \ln|u| + C \\
+&= \ln|\sec(x) + \tan(x)| + C
+\end{align*}}
+
+\newproblem{trigint:sec1tan1}{%
+Compute $\int \sec(x) \tan(x) dx$.}{%
+\begin{align*}
+\int \sec(x) \tan(x) dx &= \int du & u = \sec(x) \hspace{1pc} du = \sec(x) \tan(x) dx \\
+&= u + C \\
+&= \sec(x) + C
+\end{align*}
+}
+
+\newproblem{trigint:sec2tan1}{%
+Compute $\int \sec^2(x) \tan(x) dx$.}{%
+\begin{align*}
+\int \sec^2(x) \tan(x) dx &= \int u du & u = \sec(x) \\
+&= \frac{u^2}{2} + C & du = \sec(x) \tan(x) dx \\
+&= \frac{1}{2} \sec^2(x) + C
+\end{align*}
+}
+
+\newproblem{trigint:sec3}{%
+Compute $\int \sec^3(x) dx$.}{%
+\begin{align*}
+\int \sec^3(x) dx &= \int \underbrace{\sec(x)}_\textrm{F(x)} \underbrace{\sec^2(x)}_\textrm{G'(x)} dx \\
+&= \underbrace{\sec(x)}_\textrm{F(x)} \underbrace{\tan(x)}_\textrm{G(x)} - \int \underbrace{\sec(x)\tan(x)}_\textrm{F'(x)} \underbrace{\tan(x)}_\textrm{G(x)} dx \\
+&= \sec(x) \tan(x) - \int \sec(x) (\sec^2(x) - 1) dx
+\end{align*}
+where we have used that $\tan^2(x) = \sec^2(x) - 1$ in the last line.  Recognizing that $\int \sec^3(x) dx$ appears on both sides of this equality, we obtain
+\begin{align*}
+2 \int \sec^3(x) dx &= \sec(x) \tan(x) + \int \sec(x) dx \\
+\int \sec^3(x) dx &= \frac{1}{2} \left(\sec(x) \tan(x) + \ln |\sec(x) + \tan(x) | \right) + C
+\end{align*}
+}
+

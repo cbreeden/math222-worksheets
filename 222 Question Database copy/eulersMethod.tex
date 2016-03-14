@@ -1,0 +1,235 @@
+\newproblem{euler:nonlinear}{%
+Suppose that $p$ is a function of $t$, satisfying 
+\begin{align*}
+tp' &= a(p^2 + t^2) \\ 
+p(1) &= 2
+\end{align*}
+where $a$ is some small unknown constant.  Using Euler's method with step size $2$, approximate $p(5)$.  Your answer will depend on $a$.}{%
+
+We know $p(1)=2$.  Plugging into the equation, 
+\[1*p'(1) = a(2^2 + 1^2)\]
+so $p'(1) = 5a$.  Thus
+\[p(3) \approx 2*p'(1) + p(1) = 2*5a + 2 = 10a + 2\]
+
+We know $p(3) \approx 10a + 2$.  Plugging into the equation, 
+\[3*p'(3) \approx a((10a+2)^2 + 9\]
+So $p'(3) \approx \frac{a}{3}(10a+2)^2 + 3$.  Thus
+\[p(5) \approx 2*p'(3) + p(3) = 2*\left(\frac{a}{3}(10a+2)^2 + 3 \right) + 10a + 2\]
+}
+
+\newproblem{euler:sin(0.3)}{%
+Use Euler's method with step size $0.1$ to approximate $\sin(0.3)$}{%
+
+To apply Euler's method we need a differential equation satisfied by sin, and an initial condition.  $y=\sin$ satisfies
+\[y'' = -y\]
+As for the initial condition, we don't know the value of $\sin(x)$ for most numbers $x$ so our choice of useful initial conditions is limited - for example, the initial condition $x=1$, $y=\sin(1)$ is useless to us since we don't know $\sin(1)$.  But we do know $y(0) = 0$, $y'(0) = 1$ so let's use that, starting at $x=0$.
+
+We have $y(0) = 0$, $y'(0) = 1$.  Plugging into $y'' = -y$, we find that $y''(0) = -0 = 0$.  Since $y'(0) = 1$ we have 
+\[y(0.1) \approx 0.1*y'(0) + y(0) \approx 0.1*1 + 0 = 0.1\]
+and since $y''(0) \approx 0$ we have 
+\[y'(0.1) \approx 0.1*y''(0) + y'(0) \approx 0.1*0 + 1 = 1\]
+
+We have $y(0.1) \approx 0.1$, $y'(0.1) \approx 1$.  Plugging into $y'' = -y$, we find that $y''(0) \approx -0.1$.  Since $y'(0.1) \approx 1$ we have 
+\[y(0.2) \approx 0.1*y'(0.1) + y(0.1) \approx 0.1*1 + 0.1 = 0.2\]
+and since $y''(0) \approx -0.1$ we have 
+\[y'(0.2) \approx 0.1*y''(0.1) + y'(0.1) \approx 0.1*-0.1 + 1 = 0.9\]
+
+We have $y(0.2) \approx 0.2$, $y'(0.2) \approx 0.9$.  Sicne we only need to do one more step I won't bother finding $y''(0.2)$.  Instead,
+\[y(0.3) \approx 0.1*y'(0.2) + y(0.2) \approx 0.1*0.9 + 0.2 = 0.29\]
+and our final answer is 
+\[\sin(0.3) = y(0.3) \approx 0.29\]
+
+One drawback of this approach is that there is no way to estimate your error, but in fact this answer is correct to 2 decimal places.
+}
+
+\newproblem{eulersMethod:Gaussian}{%
+Solve the following initial value problem exactly, then use Euler's method with step size $\Delta x =.1$ to estimate $y(.3)$.
+\begin{align*}
+\frac{dy}{dx} &= -2xy \\
+y(0) = 1
+\end{align*}}{%
+This differential equation is separable and the solution is $y(x) = e^{-x^2}$.
+
+To use Euler's method with step size $.1$, we will iteratively compute estimates to $y(.1), y(.2)$ and $y(.3)$.
+
+First, we need an estimate for $y(.1) \approx y(0) + \frac{dy}{dx}(0)\Delta x$, so we need to compute $\frac{dy}{dx}(0)$.
+\begin{align*}
+\frac{dy}{dx}(0) = -2(0)y(0) = 0
+\end{align*}
+
+so we estimate that 
+\begin{align*}
+y(.1) &\approx y(0) + \frac{dy}{dx}(0)(.1) \\
+&= 1 + (0)(.5) = 1
+\end{align*}
+
+Now we repeat the procedure above to find an approximation for $y(.2)$
+\begin{align*}
+y(.2) \approx y(.1) + \frac{dy}{dx}(.1) \Delta x
+\end{align*}
+ To compute $\frac{dy}{dx}(.1)$, we recall that we have the differential equation $\frac{dy}{dx} = -2xy$, so $\frac{dy}{dx}(.1) = -2 (.1) y(.5)$.  We have estimated that $y(.1) = 1$, so we use that in our computation, and get $\frac{dy}{dx}(.5) \approx -2(.1)(1) = -.2$.  This gives us the approximation
+\begin{align*}
+y(.2) &\approx y(.1) + \frac{dy}{dx}(.1) \Delta x \\
+&\approx 1 + (-.2)(.1) = .98
+\end{align*}
+
+Finally, we compute an approximation to $y(.3) \approx y(.2) + \frac{dy}{dx}(.2) \Delta x$.  We first compute 
+\begin{align*}
+\frac{dy}{dx}(.2) &= -2 (.2) y(.2) \\
+&\approx -2(.2)(.98) \\
+&= -.392 
+\end{align*}
+
+Then our approximation to $y(.3)$ is
+\begin{align*}
+y(.3) &\approx y(.2) + \frac{dy}{dx}(.2) \Delta x \\
+&\approx .98 + (-.392)(.1) \\
+&= .9408
+\end{align*}
+
+As a comment, the true value of $e^{-(.3)^2}$ is about .914.
+}
+
+\newproblem{eulersMethod:linear1}{%
+Solve the following initial value problem exactly, then use Euler's method with a step size of $\Delta x = .1$ to approximate $y(1.3)$.
+\begin{align*}
+\frac{dy}{dx} &= 1 + y \\
+y(1) = 0
+\end{align*}}{%
+This equation is first order linear, so to solve it exactly, we rewrite it as
+\begin{align*}
+\frac{dy}{dx} - y &= 1
+\end{align*}
+
+The integrating factor is $m(x) = e^{-x}$, which converts this equation to
+\begin{align*}
+\underbrace{e^{-x}\frac{dy}{dx} - e^{-x} y}_\textrm{$\frac{d}{dx} (e^{-x}y)$} = e^{-x} \\
+e^{-x}y &= -e^{-x} + C \\
+y&= -1 + Ce^{x}
+\end{align*}
+
+Susbtituting in the initial condition gives the solution $y(x)  = -1 + e^{x-1}$.
+
+We can now use Euler's method to approximate $y(.3)$.  We first compute
+\begin{align*}
+y(1.1) \approx y(1) + \frac{dy}{dx}(1) \Delta x
+\end{align*}
+
+From the differential equation $\frac{dy}{dx} = 1 + y$ and initial condition $y(1) = 0$ we find that $\frac{dy}{dx}(1) = 1 + y(1) = 1$. Therefore, we approximate
+\begin{align*}
+y(1.1) &\approx y(1) + \frac{dy}{dx}(1) \Delta x \\
+&= 0 + (1)(.1) \\
+&= .1
+\end{align*}
+
+Continuing as in the previous step,
+\begin{align*}
+y(1.2) &\approx y(1.1) + \frac{dy}{dx}(1.1) \Delta x
+\end{align*}
+
+where $\frac{dy}{dx}(1.1) = 1 + y(1.1) \approx 1 + .1 = 1.1$, so that
+\begin{align*}
+y(1.2) &\approx y(1.1) + \frac{dy}{dx}(1.1) \Delta x \\
+&\approx .1 + (1.1)(.1) \\
+&= .21
+\end{align*}
+
+Finally, we approximate
+\begin{align*}
+y(1.3) &\approx y(1.2) + \frac{dy}{dx}(1.2) \Delta x
+\end{align*}
+
+where $\frac{dy}{dx}(1.2) = 1 + y(1.2) \approx 1 + .21 = 1.21$ so that
+
+\begin{align*}
+y(1.3) &\approx y(1.2) + \frac{dy}{dx}(1.2) \Delta x \\
+&\approx .21 + (1.21)(.1) \\
+&= .331
+\end{align*}
+}
+
+\newproblem{eulersMethod:sep1}{%
+Find an exact solution to the following initial value problem, then use Euler's method with step size $\Delta x = .1$ to estimate $y(.2)$.
+\begin{align*}
+\frac{dy}{dx} &= -xy + 2x
+\end{align*}}{%
+}
+
+\newproblem{eulersMethod:q1}{%
+Find an exact solution to the following initial value problem, then 
+use Euler's method with step size $\Delta x = .1$ to estimate $y(.2)$
+\begin{align*}
+\frac{dy}{dx} &= 2xy + x \\
+y(0) &= 0
+\end{align*}}{%
+We begin by putting the differential equation into standard form
+\begin{align*}
+\frac{dy}{dx} - 2xy &= x
+\end{align*}
+The integrating factor for this problem is $m(x) = e^{\int -2xdx} = e^{-x^2}$.  Multiplication turns this into
+\begin{align*}
+\underbrace{e^{-x^2}\frac{dy}{dx} - 2xe^{-x^2}y}_\textrm{$\frac{d}{dx} e^{-x^2}y$} &= x e^{-x^2} \\
+e^{-x^2}y &= \int xe^{-x^2} dx \\
+&= \frac{-1}{2}e^{-x^2} + C \\
+y(x) &= -\frac{1}{2} + Ce^{x^2}
+\end{align*}
+Substituting in the initial condition $y(0) = 0$ gives that $y(x) = \frac{1}{2}e^{x^2} - \frac{1}{2}$.
+
+To approximate $y(.2)$ we first need an approximation for $y(.1)$.
+\begin{align*}
+y(.1) &\approx y(0) + \frac{dy}{dx}(0) \Delta x
+\end{align*}
+
+where $\frac{dy}{dx}(0) = 2(0)y(0) + 0 = 0$.  So we have $\frac{dy}{dx}(0) \approx y(0) + 0 (.1) = 0$.  We now have
+
+\begin{align*}
+y(.2) &\approx y(.1) + \frac{dy}{dx}(.1) \Delta x \\
+\end{align*}
+
+where $\frac{dy}{dx}(.1) = 2(.1)y(.1) + .1 = 2(.1)(0) + .1 = .1$.  Then, we have
+\begin{align*}
+y(.2) &\approx y(.1) + \frac{dy}{dx}(.1) \Delta x \\
+&\approx 0 + .1(.1) \\
+&= .01
+\end{align*}
+}
+
+\newproblem{eulersMethod:q2}{%
+Find an explicit solution to the following initial value problem, then use Euler's method with step size $\Delta x = .1$ to estimate $y(.2)$.
+\begin{align*}
+\frac{dy}{dx} &= 2xy + 2x \\
+y(0) &= 0 
+\end{align*}
+}{%
+We begin by observing that this equation is separable
+\begin{align*}
+\frac{dy}{dx} &= 2xy + 2x \\
+&= 2x(1+y) \\
+\int \frac{dy}{1+y} &= \int 2x dx \\
+\ln|1 + y| &= x^2 + C \\
+1 + y &= \underbrace{\pm e^C}_\textrm{$B \neq 0$} e^{x^2} \\
+y &= B e^{x^2} - 1
+\end{align*}
+
+Substituting in the initial condition $y(0) = 0$ we find that $B = 1$ and $y(x) = e^{x^2} - 1$.
+
+For Euler's method, we first estimate $y(.1)$
+\begin{align*}
+y(.1) \approx y(0) + \frac{dy}{dx}(0) \Delta x
+\end{align*}
+where $\frac{dy}{dx}(0) = 2(0)y(0) + 2(0) = 0$.  Then our approximation is
+\begin{align*}
+y(.1) \approx 0 + 0(.1) = 0
+\end{align*}
+
+Now we approximate $y(.2)$.
+\begin{align*}
+y(.2) &\approx y(.1) \frac{dy}{dx}(.1) \Delta x
+\end{align*}
+where $\frac{dy}{dx}(.1) = 2(.1)y(.1) + 2(.1) \approx 2(.1)(0) + 2(.1) = .2$.  Then, we have the approximation
+\begin{align*}
+y(.2) &\approx y(.1) + \frac{dy}{dx}(.1) \Delta x \\
+&\approx 0 + (.2)(.1) \\
+&= .02
+\end{align*}
+}

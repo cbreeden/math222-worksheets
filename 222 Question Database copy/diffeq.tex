@@ -1,0 +1,395 @@
+\newproblem{diffeq:sep1}{%
+Find a solution to the initial value problem
+\begin{align*}
+\frac{dy}{dx} &= e^y x^3 \\
+y(0) &= 0
+\end{align*}}{%
+In what follows, the value of the constant of integration may change from line to line.
+\begin{align*}
+\frac{dy}{dx} &= e^y x^3 \\
+e^{-y}dy &= x^3 dx \\
+\int e^{-y}dy &= \int x^3 dx \\
+- e^{-y} &= \frac{1}{4}x^4 + C \\
+e^{-y} &= -\frac{1}{4}x^4 + C \\ 
+y &= -\ln(C - \frac{1}{4}x^4)
+\end{align*}
+
+Substituting the initial condition $0 = y(0) = -\ln(C)$, we find that $C = 1$ and $y(x) = -\ln(1 - \frac{1}{4}x^4)$
+}
+
+\newproblem{diffeq:sep2}{%
+Find a solution to the initial value problem
+\begin{align*}
+\frac{dy}{dx} &= (1+y^2)e^x \\
+y(0) &= 0 
+\end{align*}}{%
+\begin{align*}
+\frac{dy}{dx} &= (1+y^2)e^x \\
+\frac{dy}{1+y^2} &= e^x dx \\
+\int \frac{dy}{1+y^2} &= \int e^x dx \\
+\mbox{arctan}(y) &= e^x + C \\
+y &= \tan(e^x + C)
+\end{align*}
+
+Substituting in the initial condition, we find that $0 = Y(0) = \tan(1 + C)$.  A possible choice of $C$ is $C = -1$.  Our final answer is then $y(x) = \tan(e^x - 1)$.
+}
+
+\newproblem{diffeq:sep3}{%
+Find a solution to the initial value problem
+\begin{align*}
+\frac{dy}{dx} &= y\sqrt{y^2 - 1} \cos(x) \\
+y(0) &= 1
+\end{align*}}{%
+First, we can observe that one solution to this problem is given by $y(x) = 1$.  
+
+We can find another solution by separating variables.
+\begin{align*}
+\frac{dy}{dx} &= y\sqrt{y^2 - 1} \cos(x) \\
+\frac{dy}{y \sqrt{y^2-1}} &= \cos(x) dx \\
+\int \frac{dy}{y \sqrt{y^2-1}} &= \int \cos(x) dx \\
+\mbox{arcsec}(y) &= \sin(x) + C \\
+y &= \sec(\sin(x) + C)
+\end{align*}
+Substituting in the initial condition $y(0) = 1$ we find that
+\begin{align*}
+1 = y(0) = \sec(C)
+\end{align*}
+
+So we may take, for example, $C = 0$.  Our final solution is then either of $y(x) =1$ or $y(x) = \sec(\sin(x))$.
+}
+
+\newproblem{diffeq:sep4}{%
+Find the general solution to the differential equation
+\begin{align*}
+\frac{dy}{dx} &= x^2 + y^2x^2
+\end{align*}}{%
+\begin{align*}
+\frac{dy}{dx} &= x^2 + y^2x^2 \\
+\frac{dy}{dx} &= x^2(1 + y^2) \\
+\frac{dy}{1+y^2} &= x^2 dx \\
+\int \frac{dy}{1+y^2} &= \int x^2 dx \\
+\mbox{arctan}(y) &= \frac{x^3}{3} + C \\
+y(x) &= \tan\left(\frac{x^3}{3} + C\right)
+\end{align*}.}
+
+\newproblem{diffeq:sep5}{%
+Find the general solution to the differential equation
+\begin{align*}
+\frac{dy}{dx} &= \frac{1}{e^y \sqrt{1-x^2}}
+\end{align*}}{%
+\begin{align*}
+\frac{dy}{dx} &= \frac{1}{e^y \sqrt{1-x^2}} \\
+e^y dy &= \frac{dx}{\sqrt{1-x^2}} \\
+\int e^y dy &= \int \frac{dx}{\sqrt{1-x^2}} \\
+e^y &= \mbox{arcsin}(x) + C \\
+y &= \ln\left(\mbox{arcsin}(x) + C\right)
+\end{align*}
+}
+
+\newproblem{diffeq:sep6}{%
+Find the general solution to the differential equation
+\begin{align*}
+\frac{dy}{dx} = \frac{1}{e^y(1+x^2)}
+\end{align*}}
+{%
+\begin{align*}
+\frac{dy}{dx} &= \frac{1}{e^y(1+x^2)} \\
+e^y dy &= \frac{dx}{(1+x^2)} \\
+\int e^y dy &= \int \frac{dx}{(1+x^2)} \\
+e^y &= \mbox{arctan}(x) + C \\
+y &= \ln\left(\mbox{arctan}(x) + C\right)
+\end{align*}
+}
+
+\newproblem{diffeq:sep7}{%
+Find a solution to the initial value problem
+\begin{align*}
+\frac{dy}{dx} &= \sqrt{1-y^2}\sec^2(x) \\
+y(0) &= 0
+\end{align*}}{%
+\begin{align*}
+\frac{dy}{dx} &= \sqrt{1-y^2}\sec^2(x) \\
+\int \frac{1}{\sqrt{1-y^2}} dy &= \int \sec^2(x) dx \\
+\mbox{arcsin}(y) &= \tan(x) + C \\
+y(x) &= \sin(\tan(x) + C)
+\end{align*}
+
+Using the initial condition, we find that
+\begin{align*}
+0 &= \sin(0 + C) \\
+\end{align*}
+so $C = 0$ gives a solution.  Our final answer is then $\sin(\tan(x))$.
+}
+
+
+\newproblem{diffeq:fol1}{%
+Find the general solution to the differential equation (for $x\neq 0$)
+\begin{align*}
+x \frac{dy}{dx} = -y + x
+\end{align*}}{%
+We rewrite the equation as
+\begin{align*}
+x \frac{dy}{dx} + y = x
+\end{align*}
+and observe that this equation is already in the form
+\begin{align*}
+\frac{d(xy)}{dx} = x \\
+\end{align*}
+which is separable.  We solve
+\begin{align*}
+\frac{d(xy)}{dx} &= x \\
+\int d(xy) &= \int x dx \\
+xy & = \frac{1}{2}x^2 + C \\
+y(x) &= \frac{1}{2}x + \frac{C}{x}
+\end{align*}
+}
+
+\newproblem{diffeq:fol2}{%
+Find the general solution to the differential equation
+\begin{align*}
+\frac{1}{2x}\frac{dy}{dx} &= y + e^{x^2}
+\end{align*}}{%
+We begin by writing the problem in standard form as
+\begin{align*}
+\frac{dy}{dx} - 2x y = 2x e^{x^2}
+\end{align*}
+The integrating factor for this problem is $m(x) = e^{\int-2xdx} = e^{-x^2}$.  If we multiply through by $e^{-x^2}$, then the equation becomes separable and we can find the general solution directly directly. 
+\begin{align*}
+e^{-x^2}\frac{dy}{dx} - 2xe^{-x^2}y &= 2x \\
+\frac{d(e^{-x^2}y)}{dx} &= 2x \\
+\int d(e^{-x^2}y) &= \int 2x dx \\
+e^{-x^2} y &= x^2 + C \\
+y(x) &= x^2 e^{x^2} + Ce^{x^2}
+\end{align*}
+}
+
+\newproblem{diffeq:fol3}{%
+Find a solution to the initial value problem
+\begin{align*}
+x \frac{dy}{dx} + 2y &= \frac{\cos(x)}{x} \\
+y(\pi) &= 1
+\end{align*}}{%
+We being by writing the differential equation in standard form as
+\begin{align*}
+\frac{dy}{dx} + \frac{2}{x} y &= \frac{\cos(x)}{x^2} \\
+\end{align*}
+The integrating factor for this problem is $m(x) = e^{\int \frac{2}{x}dx} = e^{2\ln(x)} = x^2$.  Multiplying through by $x^2$ converts this problem to
+\begin{align*}
+x^2 \frac{dy}{dx} + 2x y &= \cos(x) \\
+\frac{d(x^2y)}{dx} & = \cos(x) \\
+\int d(x^2y) &= \int \cos(x) dx \\
+x^2 y &= \sin(x) + C \\
+y(x) &= \frac{\sin(x)}{x^2} + \frac{C}{x^2}
+\end{align*}
+We substitute in the initial condition $y(\pi) = 1$ to find that
+\begin{align*}
+y(\pi) &= \underbrace{\frac{\sin(\pi)}{\pi^2}}_\textrm{0} + \frac{C}{\pi^2} \\
+\end{align*}
+so $C = \pi^2$ and $y(x) = \frac{\sin(x)}{x^2} + \frac{\pi^2}{x^2}$.
+}
+
+\newproblem{diffeq:fol4}{%
+Find a solution to the initial value problem
+\begin{align*}
+\cos(x) \frac{dy}{dx} &= 1 - \sin(x) y \\
+y(0) &= 1
+\end{align*}}{%
+We begin by writing the equation in standard form
+\begin{align*}
+\frac{dy}{dx} + \tan(x) y = \sec(x) \\
+\end{align*}
+The integrating factor for this problem is $m(x) = e^{\int \tan(x)dx} = e^{-\ln(\cos(x))} = \sec(x)$.  Multiplying through by $m(x)$ makes this equation separable.
+\begin{align*}
+\frac{dy}{dx} + \tan(x) y &= \sec(x) \\
+\sec(x)\frac{dy}{dx} + \sec(x)\tan(x) y &= \sec^2(x) \\
+\frac{d(\sec(x)y)}{dx} &= \sec^2(x) \\
+\int d(\sec(x)y) &= \int \sec^2(x) dx \\
+\sec(x)y &= \tan(x) + C \\
+y &= \sin(x) + C \cos(x)
+\end{align*}
+Substituting in $y(0) = 1$ we find that $C = 1$ and $y(x) = \sin(x) + \cos(x)$.
+}
+
+\newproblem{diffeq:fol5}{%
+Find a solution to the initial value problem
+\begin{align*}
+x \frac{dy}{dx} + 2y &= -\frac{\sin(x)}{x} \\
+y(\frac{\pi}{2}) &= 1
+\end{align*}}{%
+We being by writing the differential equation in standard form as
+\begin{align*}
+\frac{dy}{dx} + \frac{2}{x} y &= -\frac{\sin(x)}{x^2} \\
+\end{align*}
+The integrating factor for this problem is $m(x) = e^{\int \frac{2}{x}dx} = e^{2\ln(x)} = x^2$.  Multiplying through by $x^2$ converts this problem to
+\begin{align*}
+x^2 \frac{dy}{dx} + 2x y &= -\sin(x) \\
+\frac{d(x^2y)}{dx} & = -\sin(x) \\
+\int d(x^2y) &= -\int \sin(x) dx \\
+x^2 y &= \cos(x) + C \\
+y(x) &= \frac{\cos(x)}{x^2} + \frac{C}{x^2}
+\end{align*}
+
+Susbtituting in the initial condition, we find that 
+\begin{align*}
+1 = y(\frac{\pi}{2}) = \underbrace{\frac{\cos(\frac{\pi}{2})}{(\frac{\pi}{2})^2}}_\textrm{0} + \frac{C}{(\frac{\pi}{2})^2}
+\end{align*}
+so that $y(x) = \frac{\cos(x)}{x^2} + \frac{\pi^2}{4} \frac{1}{x^2}$.
+}
+
+\newproblem{diffeq:twoBranches}{%
+Find a solution to the initial value problem
+\begin{align*}
+&\frac{dy}{dx} = (y-1)\frac{1}{x} \\
+&y(-1) = 0
+\end{align*}}{%
+\begin{align*}
+\frac{dy}{dx} &= (y-1)\frac{1}{x} \\\\
+\frac{1}{y-1}\frac{dy}{dx} &= \frac{1}{x} \\
+\frac{1}{y-1}dy &= \frac{1}{x} dx \\
+\int \frac{1}{y-1}dy &= \int \frac{1}{x} dx \\
+\ln|y-1| &= ln|x| + c \\
+y-1 &= \pm |x| e^c \\
+y &= 1 \pm |x| e^c
+\end{align*}
+We are working near $-1$, so $|x| = -x$.  Plugging in $y(-1)=0$, 
+\begin{align*}
+0 = 1 \pm e^c \underbrace{(- (-1))}_\textrm{$|-1|$}
+\end{align*}
+$e^c$ is always positive, so we must have
+\begin{align*}
+0 = y(-1) &= 1 - e^c
+\end{align*}
+Thus $1 = e^c$ and we get as our final answer
+\begin{align*}
+y(x) &= 1  - e^c (-x) \\
+y(x) &= 1 + x
+\end{align*}
+} 
+
+\newproblem{diffeq:fol6}{%
+Find the general solution to the differential equation
+\begin{align*}
+\cos(x) \frac{dy}{dx} = y + \sin(x) + 1
+\end{align*}
+where we assume that $\frac{-\pi}{2}<x<\frac{\pi}{2}$.}{%
+We begin by writing the differential equation in standard form
+\begin{align*}
+\cos(x) \frac{dy}{dx} &= y + \sin(x) + 1 \\
+\frac{dy}{dx} - \sec(x) y &= \tan(x) + \sec(x)
+\end{align*}
+
+The integrating factor is $m(x) = e^{\int -\sec(x) dx} = e^{-\ln|\sec(x) + \tan(x)|}$.  Recalling that we assumed $-\frac{\pi}{2} < x < \frac{\pi}{2}$, this is $\frac{1}{\sec(x) + \tan(x)}$.  Multiplying through, we find that
+\begin{align*}
+\frac{d}{dx}\left(\frac{y}{\sec(x)+\tan(x)}\right) &= 1 \\
+\int d\left(\frac{y}{\sec(x)+\tan(x)}\right) &= \int dx \\
+\frac{y}{\sec(x)+\tan(x)} &= x + C \\
+y(x) &= x \left(\sec(x) + \tan(x) \right) + C\left(\sec(x) + \tan(x)\right)
+\end{align*}
+}
+
+\newproblem{diffeq:fol7}{%
+Find the general solution to the differential equation
+\begin{align*}
+\frac{dy}{dx} + \frac{1}{x^2-1}y = \frac{3}{2} \sqrt{1+x}
+\end{align*}
+where we assume that $x > 1$.}{%
+The equation is already in standard form, so we can solve for the integrating factor $m(x) = e^{\int \frac{1}{x^2-1}dx} = e^{\ln\sqrt{|\frac{x-1}{x+1}|}} = \sqrt{\frac{x-1}{x+1}}$ for $x > 1$.  Multiplying through, we find that
+\begin{align*}
+\sqrt{\frac{x-1}{x+1}}\frac{dy}{dx} + \frac{1}{x^2-1}\sqrt{\frac{x-1}{x+1}}y &= \frac{3}{2} \sqrt{\frac{x-1}{x+1}}\sqrt{1+x} \\
+\frac{d}{dx} y \sqrt{\frac{x-1}{x+1}} &= \frac{3}{2} \sqrt{x-1} \\
+\int d\left(y\sqrt{\frac{x-1}{x+1}}\right) &=\frac{3}{2} \int \sqrt{x-1} dx \\
+y \sqrt{\frac{x-1}{x+1}} &= \left(x-1\right)^{\frac{3}{2}} + C \\
+y(x) &= (x-1)\sqrt{x+1} + C\sqrt{\frac{x+1}{x-1}}
+\end{align*}
+}
+
+\newproblem{diffeq:fol8}{%
+Find a solution to the initial value problem
+\begin{align*}
+x^2 \frac{dy}{dx} - 2xy &= x^4 \cos(x) \\
+y(\pi) &= 1
+\end{align*}}{%
+We begin by putting the differential equation into standard form
+\begin{align*}
+x^2 \frac{dy}{dx} - 2xy &= x^4 \cos(x) \\
+\frac{dy}{dx} - \frac{2}{x}y &= x^2 \cos(x)
+\end{align*}
+
+The integrating factor is then $m(x) = e^{-2\int\frac{1}{x}dx} = e^{-\ln|x|} = \frac{1}{x^2}$.  We multiply through to find that
+\begin{align*}
+\frac{dy}{dx} - \frac{2}{x}y &= x^2 \cos(x) \\
+\frac{1}{x^2}\frac{dy}{dx} - \frac{2}{x^3}y &= \cos(x)\\
+\frac{d}{dx} \left(\frac{1}{x^2}y\right) &= \cos(x) \\
+\int d\left(\frac{1}{x^2}y\right) &= \int \cos(x) dx \\
+\frac{1}{x^2} y &= \sin(x) + C \\
+y(x) &= x^2 \sin(x) + Cx^2
+\end{align*}
+
+Substituting in the initial condition, we find that 
+\begin{align*}
+1 = y(\pi) = \pi^2 \sin(\pi) + C\pi^2 = C\pi^2 
+\end{align*}
+so that $C = \frac{1}{\pi^2}$ and $y(x) = x^2 \sin(x) + \frac{x^2}{\pi^2}.$
+}
+
+\newproblem{diffeq:fol9}{%
+Find a solution to the initial value problem
+\begin{align*}
+(1+x^2)\mbox{arctan}(x) \frac{dy}{dx} &= (1+x^2)e^x - y \\
+y(\tan(1)) &= e^{\tan(1)}
+\end{align*}}{%
+We begin by putting the equation into standard form
+\begin{align*}
+\frac{dy}{dx} + \frac{1}{(1+x^2)\mbox{arctan}(x)} y &= \frac{e^x}{\mbox{arctan}(x)}
+\end{align*}
+
+Notice that 
+\begin{align*}
+\int \frac{1}{\mbox{arctan}(x)(1+x^2)}dx &= \int \frac{1}{u} du & u = \mbox{arctan}(x) \hspace{1pc} du = \frac{1}{1+x^2}dx \\
+&= \ln|u| + C \\
+&= \ln|\mbox{arctan}(x)| + C
+\end{align*}
+
+We are working near $\tan(1) > 0$ so we may assume that $\mbox{arctan}(x) > 0$.
+
+\begin{align*}
+m(x) &= e^{\int \frac{1}{\mbox{arctan}(x)(1+x^2)}dx} \\
+&= e^{\ln(\mbox{arctan}(x))} \\
+&= \mbox{arctan}(x)
+\end{align*}
+
+Multiplying through by the integrating factor, we find that 
+\begin{align*}
+\frac{d}{dx}\left(\mbox{arctan}(x) y\right) &= e^x \\
+\int d\left(\mbox{arctan}(x)y\right) &= \int e^x dx \\
+\mbox{arctan}(x)y &= e^x + C \\
+y(x) &= \frac{e^x}{\mbox{arctan}(x)} + \frac{C}{\mbox{arctan}(x)} 
+\end{align*}
+
+Substituting in the initial condition 
+\begin{align*}
+e^{\tan(1)} = y(\tan(1)) &= \frac{e^{\tan(1)}}{\mbox{arctan}(\tan(1))} + \frac{C}{\mbox{arctan}(\tan(1))} \\
+&= e^{\tan(1)} + C
+\end{align*}
+
+so $C = 0$ and $y(x) = \frac{e^x}{\mbox{arctan}(x)}$.
+}
+
+\newproblem{diffeq:fol10}{%
+Find a particular solution to the differential equation
+\begin{align*}
+\frac{1+x^3}{3x^2}\frac{dy}{dx} &= 1 - y(x)\\
+y(1) &= 2
+\end{align*}}{%
+We first put the equation into standard form
+\begin{align*}
+\frac{dy}{dx} + \frac{3x^2}{1+x^3} y &= \frac{3x^2}{1+x^3}
+\end{align*}
+The integrating factor for this problem is $m(x) = (1+x^3)$ and the solution is
+\begin{align*}
+y(x) &= \frac{1}{1+x^3}\left(\int 3x^2 dx\right) \\
+&= \frac{1}{1+x^3}\left(x^3 + C\right) \\
+\end{align*}
+The initial condition $y(1) = 2$ gives that $\frac{1 + C}{2} = 2$, so $C = 3$ and $y(x) = \frac{3 + x^3}{1+x^3}$.
+}
+
