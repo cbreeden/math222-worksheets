@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{geometry} 
+\geometry{left=0.8in, right =0.8in, bottom=1in, top=0.6in} % Establish a 1 inch margin
+
+\usepackage{graphicx} % Allow ability to include graphics
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape\underline} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{Math 222 - Worksheet 5}
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\begin{document}
+
+%% Header
+{
+\normalfont \normalsize 
+\begin{flushright}
+\textsc{Math 222, UW Madison}
+\end{flushright}
+{\center
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+{\huge Worksheet 5}\\
+Partial Fractions \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+Whenever we want to integrate a rational function (that is one of the form $\displaystyle \frac{P(x)}{Q(x)}$ where $P(x)$ and $Q(x)$ are polynomials), we need to make sure that the polynomial in the numerator is {\bfseries smaller} than the one in the denominator.  We do this with {\bfseries polynomial division}.
+
+\section*{Using Polynomial Division}
+
+1. \quad $\displaystyle \int \frac{x^3 + x^2 + x + 2}{x^2 + 1}$
+
+\vfill
+
+\section*{Canonical Examples}
+When working with rational functions you will run into three canonical examples, two of which require you to brush up on your {\bfseries completing the square} skills.  The canonical examples are of the form:
+
+\[ \int \frac{1}{(x-a)^2 + b^2}\,dx, \qquad \int \frac{1}{(x-a)^n}\,dx, \qquad \int \frac{x}{(x - a)^2 + b^2}\,dx \]
+
+There are a few more slightly more complicated cases, but knowing how to handle these 3 are absolutely critical.  Just keep in mind when you see these guys you {\bfseries don't} want to use partial fractions.\\
+
+2. \quad $\displaystyle \int \frac{1}{x^2  - 2x + 1}\,dx$
+\vfill
+
+\newpage
+
+3. \quad $\displaystyle \int \frac{1}{x^2 -2x + 1}\,dx$
+
+\vfill
+
+4. \quad $\displaystyle \int \frac{1}{2x^2 + 4x + 10}\,dx$
+
+\vfill
+
+5. \quad $\displaystyle \int \frac{x}{x^2 + 2x + 2}\,dx$
+
+\vfill
+
+\newpage
+
+6. \quad $\displaystyle \int \frac{x + 1}{x^2 - 2x + 1}\,dx$
+
+\vfill
+
+\section*{Partial Fraction Decomposition}
+
+Remember these general steps for rational functions:
+
+\begin{enumerate}
+\item Perform polynomial division, if necessary
+\item Factor the denominator (the quadratic formula may be helpful)
+\item Perform partial fractions decomposition [PFD] (only if you have multiple factors)
+\item Solve for unknowns in PFD using either Heaviside or solving a system of equations.
+\end{enumerate}
+
+6. \quad $\displaystyle \int \frac{x^5}{x^4 - 1}\,dx$
+
+\vfill
+
+\newpage
+
+7. \quad $\displaystyle \int_0^1 \frac{x^4(1-x)^4}{1 + x^2}\,dx$
+
+\vfill
+
+8. \quad $\displaystyle \int \frac{w - 1}{w^2 + w}\,dx$
+
+\vfill
+
+\newpage
+
+9. \quad $\displaystyle \int \frac{x}{x^4 - 2x^2 + 1}\,dx$
+
+\vfill
+
+10. \quad $\displaystyle \int \frac{x}{x^3 + 2x^2 + 2x}\,dx$
+
+\vfill
+
+
+
+\end{document}
+
+
+
+

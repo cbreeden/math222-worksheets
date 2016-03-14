@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{geometry} 
+\geometry{left=0.8in, right =0.8in, bottom=1in, top=0.6in} % Establish a 1 inch margin
+
+\usepackage{graphicx} % Allow ability to include graphics
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape\underline} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{Math 222 - Worksheet 4}
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\begin{document}
+
+%% Header
+{
+\normalfont \normalsize 
+\begin{flushright}
+\textsc{Math 222, UW Madison}
+\end{flushright}
+{\center
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+{\huge Worksheet 4}\\
+Reduction Formulas \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+You often find that you just need to apply integration by parts a lot; I really mean a lot, like if you want to solve $\displaystyle \int \sin^{64}(x)\,dx$.  So to simplify doing the same thing over and over again, we write down a formula for the reduction of the integral.  These are called {\bfseries reduction formulas}; computers love them.
+
+\section*{Using Reduction Formulas}
+
+1. Using the reduction formula $\displaystyle \int x^n e^x\,dx = x^n e^x - n\int x^{n-1}e^x\,dx$, compute $\displaystyle \int x^4 e^x\,dx$.
+
+\vfill
+
+2. Compute $\displaystyle \int_0^{\pi} \cos(x)\,dx$ and $\displaystyle \int_0^{\pi} x^2 \cos(x)\,dx$.  Then use the reduction formula:
+
+\[ \int x^n\cos(x)\,dx = x^n\sin(x) + nx^{n-1}\cos(x) - n(n-1)\int x^{n-2}\cos(x)\,dx \]
+
+to compute $\displaystyle \int_0^{\pi} x^4 \cos(x)\,dx$.
+
+\vfill
+\vfill
+
+\newpage
+
+3. Use the reduction formula $\displaystyle \int \tan^n(x)\,dx = \frac{\tan^{n-1}(x)}{n-1} - \int \tan^{n-2}(x)\,dx$ to calculate $\displaystyle \int_0^{\pi/4} \tan^5(x)\,dx$.
+
+\vfill
+
+
+\section*{Deriving Reduction Formulas}
+
+4. Show $\displaystyle \int x^n e^x\,dx = x^n e^x - n \int x^{n-1} e^x\,dx$\\
+\vfill
+
+5. Show $\displaystyle \int \tan^n(x)\,dx = \frac{\tan^{n-1}(x)}{n-1} - \int \tan^{n-2}(x)\,dx$.\\
+(most of the time, deriving a reduction formula comes down to IBP, but not always).
+\vfill
+
+
+
+
+
+
+
+\end{document}
+
+
+
+

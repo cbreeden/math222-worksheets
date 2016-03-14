@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{geometry} 
+\geometry{left=0.8in, right =0.8in, bottom=1in, top=0.6in} % Establish a 1 inch margin
+
+\usepackage{graphicx} % Allow ability to include graphics
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape\underline} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{Math 222 - Worksheet 1}
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\begin{document}
+
+%% Header
+{
+\normalfont \normalsize 
+\begin{flushright}
+\textsc{Math 222, UW Madison}
+\end{flushright}
+{\center
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+{\huge Worksheet 1}\\
+Review \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section*{Trig Identities}
+
+1. Using the identity $\sin^2(\theta) + \cos^2(\theta) = 1$, show that $\tan^2(\theta) + 1 = \sec^2(\theta)$.
+\vfill
+
+2. For each of the following, circle the correct answer:
+\begin{align*}
+2\sin(\theta)\cos(\theta) = && \cos(2\theta) && \sin(2\theta) \\
+\cos^2(\theta) - \sin^2(\theta) = && \cos(2\theta) && \sin(2\theta) \\
+\cos^2(\theta) = && \frac{1}{2}\big(1 + \cos(2\theta)\big) && \frac{1}{2}\big(1 - \sin(2\theta)\big) \\
+\tan(\arctan(x)) = && 1 && x
+\end{align*}\newline
+
+\section*{Calculus}
+
+3. True or False:\\
+
+%\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{ X X }
+a. \quad $\displaystyle \frac{d}{dx}\left(\frac{1}{x}\right) = \ln x$ &
+d. \quad The function $\displaystyle f(x) = \frac{1}{x+4}$ is defined for all values $x$ except for $x = -4$. \\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+b. \quad $\displaystyle \frac{d}{dt} \int_0^t \frac{1}{1+x^2}\,dx = \frac{1}{1+t^2}$ &
+e. \quad $\displaystyle \int e^{x^2}\,dx = e^{x^2} + C$ \\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+c. \quad $\displaystyle \sqrt{x^2 + 9} = x + 3$ &
+f. \quad If $f(x) = x^2 \cdot g(x)$ then $f'(x) = 2x \cdot g'(x)$.
+\end{tabularx}\newline\newline\newline\newline
+
+4. For each of the following, state whether the object is a function or a number.  If it is a function, state what variable it is a function of.\\
+
+\begin{tabularx}{\textwidth}{ X X }
+a. \quad $\displaystyle \int_1^x e^{\cos(t)}\,dt$ &
+c. \quad $\displaystyle \int_1^3 \sin(s)\,ds$ \\
+\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+b. \quad $\displaystyle \int_t^{t^2}\,\ln(\cos(x))\,dx$ &
+d. \quad $\displaystyle \int \ln(x)\,dx$
+\end{tabularx}
+
+\newpage
+
+5. Compute $\displaystyle \frac{d}{dx} \int_x^1 \ln z\,dz$.  (Hint: Recall the "Fundamental Theorem of Calculus")
+
+\vfill
+
+6. Compute $\displaystyle \int e^x\sin(2\pi e^x)\,dx$.
+
+\vfill
+
+7. Compute $\displaystyle \int_0^x \left( \int_0^t \cos(s)\,ds \right)\,dt$.
+
+\vfill
+
+8. Define $\displaystyle f(x) = \ln(x)\sin(x) + \sqrt{x^4 + x^2}$.  Compute $f'(x)$.
+
+\vfill
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+

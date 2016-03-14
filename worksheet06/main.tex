@@ -1,0 +1,158 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{geometry} 
+\geometry{left=0.8in, right =0.8in, bottom=1in, top=0.6in} % Establish a 1 inch margin
+
+\usepackage{graphicx} % Allow ability to include graphics
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{enumitem}
+\usepackage{tabu}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape\underline} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{Math 222 - Worksheet 6}
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\begin{document}
+
+%% Header
+{
+\normalfont \normalsize 
+\begin{flushright}
+\textsc{Math 222, UW Madison}
+\end{flushright}
+{\center
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+{\huge Worksheet 6}\\
+Trig \& UV Substitution \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\vfill
+
+\section*{Useful Formulas for Trig Sub}
+
+\begin{center}\tabulinesep=5pt
+\begin{tabu} to 0.8\linewidth { X[1,$$c] X[1,c] X[1,c] }
+  \sin^2 \theta = 1 - \cos^2 \theta & for & $\sqrt{a^2 - x^2}$ \\
+  1 + \tan^2 \theta = \sec^2 \theta & for & $\sqrt{x^2 + a^2}$ \\
+  \sec^2 \theta - 1 = \tan^2 \theta & for & $\sqrt{x^2 - a^2}$ \\
+
+  \textsc{Soh Cah Toa} & for & $\sin(\arccos x)$\newline%
+  							   $\cos(\arcsin x)$\newline%
+                               etc\dots\\
+
+  \sin(2\theta) = 2\sin \theta \cos \theta  & for & $\sin(2 \arccos x)$\newline%
+  													$\sin(2 \arctan x)$\newline%
+                                                    etc\dots\\
+                                                    
+  \text{Completing the Square} & for & anything math related
+
+\end{tabu}
+\end{center}
+
+\vfill\vfill
+
+\section*{Useful Formulas for UV Sub}
+
+\begin{center}\tabulinesep=5pt
+\begin{tabu} to 0.8\linewidth { X[1,$$c] X[1,c] X[1,c] }
+  \multicolumn{3}{c}{$\displaystyle U(t) = \frac{1}{2} \Big(t + \frac{1}{t}\Big) \qquad%
+                     V(t) = \frac{1}{2} \Big(t - \frac{1}{t}\Big)$} \\
+  
+  \multicolumn{3}{c}{$\displaystyle t = U(t) + V(t) \qquad \frac{1}{t} = U(t) - V(t)$} \\
+  1 + V^2(t) = U^2(t) & for & $\sqrt{x^2 + a^2}$ \\
+  U^2(t) - 1 = V^2(t) & for & $\sqrt{x^2 - a^2}$ \\
+\end{tabu}
+\end{center}
+
+\vfill\vfill
+
+\newpage
+
+\section*{Using Trig-Sub}
+
+1. \quad $\displaystyle \int \sqrt{16 - x^2}\,dx$.
+
+\vfill
+
+2. \quad $\displaystyle \int \frac{x^3}{\sqrt{4 - x^2}}\,dx$
+
+\vfill
+
+3. \quad $\displaystyle \int \frac{e^t}{\sqrt{4 - e^{2t}}}\,dx$
+
+\vfill
+
+4. \quad $\displaystyle \int \frac{1}{x^2 + 2x + 5}\,dx$
+
+\vfill
+
+\newpage
+
+\section*{Using UV-Sub}
+
+Concerning UV-Sub, I usually recommend trying an appropriate trig substitution first and if you get a trig integral that you aren't sure how to solve then trying UV-sub.\\
+
+5. \quad $\displaystyle \int \sqrt{x^2 - 4} \,dx$
+
+\vfill
+
+6. \quad $\displaystyle \int \sqrt{4 + x^2} \,dx$
+
+\vfill
+
+\end{document}
+
+
+
+

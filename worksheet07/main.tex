@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Math 222}
+\title{Worksheet 7}
+\subtitle{Improper Integrals}
+
+\begin{document}
+\maketitle
+
+\section*{Improper Integrals}
+
+\prob Compute $\DS \int_{-\inf}^0 \frac{x} {1 + x^2} \,dx$ and $\DS \int_0^{\inf} \frac{x} {1 + x^2}\,dx$.  What does this tell you about $\DS \int_{-\inf}^{\inf} \frac{x} {1 + x^2}\,dx$?\vfill
+
+\prob Compute $\DS \int_0^1 \ln(t)\,dt$.\vfill
+
+\newpage
+
+\prob Compute $\DS \int_{-\inf}^{\inf} e^{-|x|}\,dx$.\vfill
+
+\prob Compute $\DS \int_{-1}^1 \frac{1} {\sqrt{t^2 - 1}}\,dt$.\vfill
+
+\newpage
+
+\prob Compute $\DS \int_{10}^{\infty} \frac{1}{x^2 - 9}\,dx$.\vfill
+
+\section*{Inequalities}
+
+Sometimes we only care about whether or not an improper integral is finite or not as calculating the exact value of the integral may not be possible.  We often achieve this by \emph{comparing} our improper integral with another improper integral that is easier to calculate.  However, before we can do this we need to make sure our inequality skills are sharpened.\\
+
+\underline{\emph{Part 1:}} Determine which of the following inequalities are correct for $x$ "sufficiently large".  By this we mean for $x > a$ for some $a$ you are allowed to choose (it can be as large as you wish).\\
+
+\prob $\DS \frac{x^2}{x^4 + 1} < \frac{1}{x^2}$\vfill
+
+\newpage
+
+\prob $\DS \frac{1}{x^4 - x} < \frac{1}{x^4}$ \qquad\quad  How about $\DS \frac{1}{x^4 - x} < \frac{2}{x^4}$ instead?\vfill
+
+\prob $\DS \frac{2x^3 - 3x + 1}{(x^2 -x)^3} < 2x^{-4}$\vfill
+
+\newpage
+
+\underline{\emph{Part 2:}} Determine which of the following inequalities are correct for $x$ "sufficiently small".  By this we mean for all $x$ where $0 < x < a$.  Again, you are allowed to choose $a$ (it can be as small as you wish).\\
+
+\prob $\DS \frac{x}{x^2 + x} < \frac{1}{x}$\vfill
+
+\prob $\DS \frac{4}{x + 20x^2} < \frac{2}{x}$\vfill
+
+\prob $\DS \frac{2}{x - x^2} < \frac{4}{x}$\vfill
+
+\newpage
+
+\section*{Convergence of Improper Integrals}
+
+For the following improper integrals determine if the integral is finite or not.  If the integral is finite, find an estimate for the integral.  ie; a lower bound and an upper bound for the value.  Finding bounds can be more of an art than a science, but you should try to find the best estimates you can.\\
+
+\prob $\DS \int_1^{\inf} \frac{1}{x^3 + 1}\,dx$\vfill
+
+\prob $\DS \int_{2}^{\inf} \frac{1}{x^2 + \sin(x)}\,dx$\vfill
+
+\newpage
+
+\prob $\DS \int_1^{\infty} \frac{2 + \cos \phi}{\phi^2 + 1}\,d\phi$\vfill
+
+\prob $\DS \int_0^1 \frac{1}{x - x^6}\,dx$ \qquad\quad What about $\DS\int_0^1 \frac{1}{x + x^6}\,dx$ instead?\vfill
+
+
+
+
+
+
+
+
+\end{document}
