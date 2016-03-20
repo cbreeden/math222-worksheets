@@ -1,0 +1,77 @@
+\documentclass[paper=letter, 11pt]{article}
+\usepackage{../worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Calculus II}
+\title{Worksheet 11}
+\subtitle{Lagrange's Error Estimation}
+
+\usepackage{tcolorbox}
+\newcommand{\IVProb}[1]{
+	\begin{minipage}{0.5\textwidth}
+		\Prob Find a solution to the initial value problem:
+	\end{minipage}%
+	\begin{minipage}{0.5\textwidth}
+		\begin{align*}
+			#1
+		\end{align*}
+	\end{minipage}
+}
+
+\begin{document}
+\maketitle
+
+\section*{Differential Equations}
+
+\IVProb{
+	\frac{dy}{dx} &= \Big(1 + y^2\Big)e^x && y(0) = 0 && \\
+}\vfill
+
+\IVProb{
+	\frac{dy}{dx} &=  \left(y^2 - 1\right)\cos(x) && y(0) = 1 && \\
+}\vfill
+
+
+\IVProb{
+	x\frac{dy}{dx} + 2y &= -\frac{\sin(x)}{x}  && y\left(\frac{\pi}{2}\right) = 1 && \\
+}\vfill
+
+\newpage
+
+\Prob Find the general solution to the differential equation: \quad $\DS \frac{1}{2x}\frac{dy}{dx} = y + e^{x^2}$.\vfill
+
+\Prob Find a particular solution to the initial value problem: \quad $\DS \frac{1 + x^3}{3x^2}\frac{dy}{dx} = 1 - y(x)$.\vfill
+
+\Prob Find the exact solution to the initial value problem $\DS\frac{dy}{dx} = -2xy$ where $y(0) = 1$.  Then use Euler's method with step size $\Delta x = 0.1$ to estimate $y(0.3)$.\vfill
+
+\newpage
+
+\Prob A 100 litre vat of water begins with an algae concentration of 1,000 organisms per litre. 
+Suppose that the algae naturally reproduce at a rate of five percent per minute and die
+at a rate of four percent per minute. If the vat is being drained at a rate of one litre
+per minute, what will the algae concentration be ten minutes from now? You should
+assume that the algae are uniformly distributed in the vat. Remember to define your variables with units.\vfill
+
+\Prob A tank with 200 gallons of brine solution contains 40 lbs of salt. A concentration of
+2 lb/gal is pumped in at a rate of 4 gal/min. The concentration leaving the tank is
+pumped out at a rate of 4 gal/min. Find a differential equation describing the amount
+of salt in the tank at time t.\vfill
+
+\Prob The rate at which a certain drug is eliminated from the bloodstream is proportional to
+the amount of the drug in the bloodstream. A patient now has 45 mg of the drug in his
+bloodstream. The drug is being administered to the patient intravenously at a constant
+rate of 5 milligrams per hour. Write a differential equation modeling the situation.\vfill
+
+\Prob In the absence of predators the population of mosquitoes in a certain area would increase
+at a rate proportional to its current population and its population would double every
+three weeks. There are 250,000 mosquitoes in the area initially when a flock of birds
+arrives that eats 80,000 mosquitoes per week. How many mosquitoes remain after two
+weeks?
+
+\section*{Taylor Polynomials/Series}
+
+\Prob For $f(x) = x^4 + x + 1$, find the degree three Taylor polynomial of $f(x)$ around 1.  That is, find $T^1_3\,f(x)$.\vfill
+
+\Prob Hadrubal has designed a rocket.  While proving mathematically that it won't ex
+
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[paper=letter, 11pt]{article}
+\usepackage{../worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Calculus II}
+\title{Worksheet 12}
+\subtitle{Little Oh and Taylor Series Manipulations}
+
+\usepackage{tcolorbox}
+
+\begin{document}
+\maketitle
+
+\Prob Show that $\sqrt{1 + x^2} + \sqrt{1 - x^2} = 2 + o(x^3)$.\vfill
+
+\Prob For which $k$ is it true that $\sqrt{1 + 3x^4} = 1 + o(x^k)$?\vfill
+
+\Prob Calculate $T_3 \cos(x)$, and estimate the error $\big|\cos(x) - T_3\cos(x)\big|$.  Use this to show that the following is true for any $x$:
+
+\[ 1 - \frac{x^2}{2} - \frac{x^4}{24}\, \leq \,\cos(x)\, \leq\, 1 - \frac{x^2}{2} + \frac{x^4}{24}  \]
+\vfill
+
+\newpage
+
+\Prob Calculate $T_{11} f(x)$ for $f(x) = x^2\sin(4x^3)$, and use this to find the derivatives $f^{(8)}(0)$, $f^{(10)}(0)$, and $f^{(11)}(0)$.\vfill
+
+
+\Prob Calculate $T_{8}f(x)$ for $f(x) = (1 + x^2)e^{-x^4}$, and use this to find the derivatives $f^{(6)}(0)$, $f^{(7)}(0)$, and $f^{(8)}(0)$. \vfill
+
+\Prob Calculate $T_4 f(x)$ for $f(x) = \sin(3x)e^{x^2}$ without calculating any derivatives.\vfill
+
+
+\end{document}
