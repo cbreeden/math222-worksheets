@@ -1,0 +1,43 @@
+This is makeindex, version 2.15 [MiKTeX 2.9] (kpathsea + Thai support).
+Scanning input file worksheet14...
+!! Input index error (file = worksheet14, line = 1):
+   -- Unknown index keyword \documentclass[paper=letter,11pt].
+!! Input index error (file = worksheet14, line = 2):
+   -- Unknown index keyword \usepackage.
+!! Input index error (file = worksheet14, line = 4):
+   -- Unknown index keyword \school.
+!! Input index error (file = worksheet14, line = 5):
+   -- Unknown index keyword \course.
+!! Input index error (file = worksheet14, line = 6):
+   -- Unknown index keyword \title.
+!! Input index error (file = worksheet14, line = 7):
+   -- Unknown index keyword \subtitle.
+!! Input index error (file = worksheet14, line = 9):
+   -- Unknown index keyword \usepackage.
+!! Input index error (file = worksheet14, line = 11):
+   -- Unknown index keyword \begin.
+!! Input index error (file = worksheet14, line = 12):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = worksheet14, line = 14):
+   -- Unknown index keyword \section*.
+!! Input index error (file = worksheet14, line = 16):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = worksheet14, line = 18):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = worksheet14, line = 20):
+   -- Unknown index keyword \subprob$\DSf(x)=\frac.
+!! Input index error (file = worksheet14, line = 22):
+   -- Unknown index keyword \subprob$\DSf(x)=\frac.
+!! Input index error (file = worksheet14, line = 24):
+   -- Unknown index keyword \subprob$\DSf(x)=\sqrt.
+!! Input index error (file = worksheet14, line = 26):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = worksheet14, line = 28):
+   -- Unknown index keyword \ProbComputetheTaylorpolynomial$T_4\left\.
+!! Input index error (file = worksheet14, line = 30):
+   -- Unknown index keyword \ProbComputetheTaylorpolynomial$T_4f(x)$where$f(x)=x^2e^.
+!! Input index error (file = worksheet14, line = 32):
+   -- Unknown index keyword \end.
+done (0 entries accepted, 19 rejected).
+Nothing written in worksheet14.ind.
+Transcript written in worksheet14.ilg.

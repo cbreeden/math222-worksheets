@@ -1,0 +1,59 @@
+\documentclass[paper=letter, 11pt]{article}
+\usepackage{../worksheet}
+
+\school{University of Wisconsin - Madison}
+\course{Calculus II}
+\title{Worksheet 14}
+\subtitle{Limits of Sequences}
+
+\usepackage{tcolorbox}
+
+\begin{document}
+\maketitle
+
+\section*{Computing Limits}
+
+We will start with what should be some familiar concepts from Calculus I for computing
+limits.\\
+
+\Prob $\DS \lim_{n \to \infty}\, \frac{n^2 - n + 1}{n + 2 - 2n^2}$ \vfill
+
+\Prob $\DS \lim_{n \to \infty}\, 2^{-n}n!$\vfill
+
+\Prob $\DS \lim_{n \to \infty}\, \frac{n^6}{n! + n}$\vfill
+
+\newpage
+
+\section*{Using the Definition}
+
+In this section we will cover a few basic techniques for proving the convergence
+of sequence.  Proving the convergence gives us \emph{quantitative} information
+about the convergence of a sequence.  This can be important if instead of asking
+\emph{If n gets large enough, does my sequence get close to L?} you instead ask
+\emph{How far must I go in my sequence to approximate L within my given error tolerance?}.
+Quite often you might find youself needing to stay within a given error tolerance,
+and going over the proof can tell you how to stay within that error tolerance.\\
+
+\Prob Prove that $\DS \lim_{n \to +\infty} \frac{1}{n^2} = 0$.\vfill
+
+\Prob Prove that $\DS \lim_{n \to +\infty} \frac{1}{n^2 + n} = 0$.\vfill
+
+\Prob Prove that $\DS \lim_{n \to +\infty} \frac{n^2 - 1}{n^2 + 2n} = 1$.\vfill
+
+\newpage
+
+\Prob Prove that $\lim_{n \to +\infty} \sqrt{n - 1} - \sqrt{n} = 0$.\vfill
+
+\Prob Prove that $\lim_{n \to \infty} n^5 \left(\frac{9}{10}\right)^n = 0$.\vfill
+
+\newpage
+
+\section*{Additional Practice}
+
+\Prob Prove that $\DS \lim_{n \to +\infty} \frac{2n + 5}{3n^3 - 2n + 1} = 0$\vfill
+
+\Prob Prove that $\DS \lim_{n \to +\infty} \frac{n^3 + 2}{3n^3 - 2n + 1} = \frac{1}{3}.$\vfill
+
+\Prob Prove that $\DS \lim_{n \to +\infty} (n^2 + n + 1){\left(\frac{1}{2}\right)}^{2n} = 0$.\vfill
+
+\end{document}
