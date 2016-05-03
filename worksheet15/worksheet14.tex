@@ -1,0 +1,82 @@
+\documentclass[paper=letter, 11pt]{article}
+\usepackage{../worksheet}
+
+\usepackage{mathtools}
+\usepackage{multicol}
+
+\school{University of Wisconsin - Madison}
+\course{Calculus II}
+\title{Worksheet 15}
+\subtitle{Limits of Sequences}
+
+\newcommand*{\vek}{\begin{pmatrix*}[r]}
+\newcommand*{\tor}{\end{pmatrix*}}
+\renewcommand{\v}[1]{\vec{\mathbf{#1}}}
+\renewcommand*{\ll}{/\kern-0.15em/}
+%\newcommand*{\perp}{\UpTree}
+
+\begin{document}
+\maketitle
+
+\Prob Let $\v{a} = \vek 1 \\ 2 \\ -2 \tor$ and $\vec{b} = \vek 1 \\ 0 \\ 1 \tor$.
+Find $\v{a}^{\ll}$ and $\v{a}^{\perp}$ such that $\v{a} = \v{a}^{\ll} + \v{a}^{\perp}$,
+where $\v{a}^{\ll}$ is parallel to $\v{b}$ and $\v{a}^{\perp}$ is perpendicular to $\v{b}$.
+
+\vfil\vfil
+
+\Prob Let $\v{a} = \vek -1 \\ 2 \\ 2 \tor$ and $\v{b} = \vek 1 \\ 0 \\ 1 \tor$.
+Find $\v{a}^{\ll}$ and $\v{a}^{\perp}$ where $\v{a} = \v{a}^{\ll} + \v{a}^{\perp}$
+as described in the previous problem.
+
+\vfil\vfil
+
+\Prob Consider the line defined by the equation $2x + 3y = 5$.\\
+
+\subprob Write out a parametric equation for the line.\vfil
+\subprob Write out $\v{a} = \vek 1 \\ 2 \\ 3 \tor$ as $\v{a} = \v{a}^{\ll} + \v{a}^{\perp}$,
+where $\v{a}^{\ll}$ is parallel to the line, and $\v{a}^{\perp}$ is perpendicular to the line.
+\vfil\vfil
+
+\newpage
+
+\Prob Consider the plane containing the points $(1,0,0)$, $(1,0,1)$, and $(0,1,0)$.\\
+
+\subprob Write out an equation for the plane.\vfil
+\subprob Which of the following points are on the plane: $(1, 0, -3)$, $(-1, 2, 1)$,
+and $(2, 0, 1)$?\vfil
+\subprob Consider the line through the points $(1,2,1)$ and $(0,1,1)$.  Where does
+this line intersect the plane?\vfil
+\subprob What is the distance of the point $(1,2,1)$ from the plane?\vfil
+
+\newpage
+
+\Prob Simplify the following expressions:
+
+
+\begin{multicols}{2}
+    \subprob $\v{\imath} \times (\v{\imath} - \v{\jmath})$  \vskip2cm
+    \subprob $(\v{a} + \v{b}) \times (\v{a} + \v{b})$ \vskip2cm
+    \subprob $(\v{a} + \v{b}) \times (\v{a} - \v{b})$ \vskip2cm
+    \subprob $\v{a} \cdot \left[\v{b} \times \left(\v{a} + \v{b}\right) \right]$ \vskip2cm
+
+    \columnbreak
+
+    \subprob $\v{\imath} \cdot (\v{\imath} - \v{\jmath})$ \vskip2cm
+    \subprob $(\v{a} + \v{b}) \cdot (\v{a} + \v{b})$ \vskip2cm
+    \subprob $(\v{a} + \v{b}) \cdot (\v{a} - \v{b})$ \vskip2cm
+    \subprob ${\left\|\,\v{a} + 2\v{b}\,\right\|}^{\,2}$
+\end{multicols}
+\vskip2.5cm
+
+\Prob Determine if the following lines intersect or not.  If so,
+determine their point of intersection and find the angle between
+the two lines:
+
+\[ \v{l}(t) = \vek 2 \\ 1 \\ -4 \tor + t \vek 1 \\ 2 \\ 0 \tor, \]
+\[ \v{m}(s) = \vek 0 \\ 1 \\ -1 \tor + s \vek -2 \\ 0 \\ 3 \tor. \]
+
+\newpage
+
+
+
+\end{document}
